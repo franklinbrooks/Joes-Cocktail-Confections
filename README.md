@@ -42,10 +42,10 @@ This project was developed as part of the Web Development Immersive program at G
 
 ### Minimum Viable Product
 - Use PostgreSQL & Express to build full stack web app
-- Should include TWO related models, one of the which should be a user model.
+- Should include TWO related models, one of which should be a user model.
 - Include all major CRUD functions for at least one of those models
 - Add an Authentication layer to your app to restrict access to appropriate users
-- Craft thoughtful user stories together as a team, displaying them on a TRELLO BOARD
+- Craft thoughtful user stories together as a team, displaying them on a ZenHub board
 - Manage team contributions and collaboration using the Git workflow
 - Layout and style your front-end, so that is Responsive and uses a CSS Framework
 - Deploy your application online so it's publicly accessible
