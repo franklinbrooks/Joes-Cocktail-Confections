@@ -7,6 +7,10 @@
 #### [Link to Repo:](https://github.com/franklinbrooks/...)  
 #### [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
 
+### About The Project
+A couple paragraphs about the general approach.
+Who are users, what do they want, and why?
+
 ### Wireframes for project: 
   ![Wireframe 1:](https://github.com/franklinbrooks/.....jpg)
 
@@ -20,6 +24,9 @@
 - Serialize ORM
 - Bcrypt
 
+### Installation instructions for dependencies
+This project includes a package.JSON file which provides details for the above dependencies and others.  These files are imported into the node_modules folder by Node Package Manager. One Ruby gem enables transpiling of Sass to CSS.  Finally, Font-Awesome and Materialize-CSS are linked via CDN.
+
 ### Code Example Quote
 ```javascript
 
@@ -28,8 +35,7 @@
 
 ```` 
 ### Build Strategy
-
-.....
+.....A couple paragraphs about the general approach you took...
 
 ### Contributing 
 This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, All!
@@ -46,6 +52,8 @@ This project was developed as part of the Web Development Immersive program at G
 
 ### Improvements on MVP
 - ...
+
+### Unsolved problems or major hurdles team had to overcome
 
 ### Possible Future Improvements 
   1. Addition of User invoicing via third-party payment API
