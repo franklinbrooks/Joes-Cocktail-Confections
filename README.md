@@ -29,6 +29,7 @@
 ```` 
 ### Build Strategy
 
+.....
 
 ### Contributing 
 This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. 
@@ -53,6 +54,6 @@ Our mentors for this build were [Kate Shishkina](katherine.shishkina@generalasse
   1. Ability for Admin login 
 
 ### Authors
-  [Shantel Moore](moore.shantel@gmail.com)
-  [Dominic Farquharson](farquharsondominic@gmail.com)
-  [Franklin Brooks](fcb@franklinchristopherbrooks.com) 
+  ###[Shantel Moore](moore.shantel@gmail.com)    
+  ###[Dominic Farquharson](farquharsondominic@gmail.com)    
+  ###[Franklin Brooks](fcb@franklinchristopherbrooks.com) 
