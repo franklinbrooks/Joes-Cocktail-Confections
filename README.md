@@ -38,7 +38,7 @@ This project includes a package.JSON file which provides details for the above d
 .....A couple paragraphs about the general approach you took...
 
 ### Contributing 
-This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, All!
+This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, all!
 
 ### Minimum Viable Product
 - Use PostgreSQL & Express to build full stack web app
