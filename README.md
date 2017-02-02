@@ -3,9 +3,9 @@
 ### Our implementation of project:
   ![Screenshot](https://github.com/franklinbrooks/Joes...images/screenshot.png) 
 
-### Link to live site: [Link to Live Site:](http://....com/)
-### Link to Repo: [Link to Repo:](https://github.com/franklinbrooks/...)
-### Link to ZenHub: [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)
+### [Link to Live Site:](http://....com/)  
+### [Link to Repo:](https://github.com/franklinbrooks/...)  
+### [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
 
 ### Wireframes for project: 
   ![Wireframe 1: READ + CREATE](https://github.com/franklinbrooks/.....jpg)
@@ -54,6 +54,6 @@ Our mentors for this build were [Kate Shishkina](katherine.shishkina@generalasse
   1. Ability for Admin login 
 
 ### Authors
-  ###[Shantel Moore](moore.shantel@gmail.com)    
-  ###[Dominic Farquharson](farquharsondominic@gmail.com)    
-  ###[Franklin Brooks](fcb@franklinchristopherbrooks.com) 
+  [Shantel Moore](moore.shantel@gmail.com)    
+  [Dominic Farquharson](farquharsondominic@gmail.com)    
+  [Franklin Brooks](fcb@franklinchristopherbrooks.com) 
