@@ -1,14 +1,14 @@
 # Joe's Cocktail Confections Website
 
-### Our implementation of project:
+### Screenshot:
   ![Screenshot](https://github.com/franklinbrooks/Joes...images/screenshot.png) 
 
-### [Link to Live Site:](http://....com/)  
-### [Link to Repo:](https://github.com/franklinbrooks/...)  
-### [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
+#### [Link to Live Site:](http://....com/)  
+#### [Link to Repo:](https://github.com/franklinbrooks/...)  
+#### [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
 
 ### Wireframes for project: 
-  ![Wireframe 1: READ + CREATE](https://github.com/franklinbrooks/.....jpg)
+  ![Wireframe 1:](https://github.com/franklinbrooks/.....jpg)
 
 ### Technologies Used
 - HTML
@@ -32,8 +32,7 @@
 .....
 
 ### Contributing 
-This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. 
-Our mentors for this build were [Kate Shishkina](katherine.shishkina@generalassemb.ly), [Ariana Dziedzic](ariana.dziedzic@generalassemb.ly), and [Vincent Abruzzo](vincent.abruzzo@generalassemb.ly). Thanks, All!
+This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, All!
 
 ### Minimum Viable Product
 - Use PostgreSQL & Express to build full stack web app
