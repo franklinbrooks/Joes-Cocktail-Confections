@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+const authHelpers = require('../auth/auth-helpers');
+const passport = require('../auth/local');
 
 router.get('/register', function(req, res, next) {
   res.render('auth/register', {
