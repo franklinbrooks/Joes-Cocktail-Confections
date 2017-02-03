@@ -1,0 +1,2 @@
+DATABASE_USERNAME="chan28"
+SECRET_KEY = "hjkhkhkja"
