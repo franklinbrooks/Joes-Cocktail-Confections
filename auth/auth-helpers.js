@@ -9,15 +9,15 @@ function createUser(req, res) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
   return models.User.create({
-    username: req.body.username,
+    user_name: req.body.user_name,
     password: hash,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     email: req.body.email,
+    cell_number:req.body.cell_number,
     dob: req.body.dob
   });
 }
-
 function loginRequired(req, res, next) {
   if (!req.user) res.redirect('/auth/login');
   return next();
