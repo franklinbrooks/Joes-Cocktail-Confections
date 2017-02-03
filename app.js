@@ -19,6 +19,7 @@ var jquery = require('jquery');
 var index = require('./routes/index');
 var user = require('./routes/user');
 var auth = require('./routes/auth');
+var products = require('./routes/products');
 var app = express();
 
 // override with POST having ?_method=DELETE
@@ -54,6 +55,7 @@ app.use(passport.session());
 app.use('/', index);
 app.use('/user', user);
 app.use('/auth', auth);
+app.use('/products', products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
