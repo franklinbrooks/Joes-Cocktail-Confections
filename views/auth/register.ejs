@@ -4,7 +4,8 @@
     <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-      <label>* All fields are required</label>
+        <h1> <%= title %> </h1>
+        <label>* All fields are required</label>
         <br>
         <br>
         <form action="/auth/register" method="post" autocomplete="on">
@@ -15,8 +16,8 @@
           </div>
           <div>
             <label>Password: (8-12 characters)</label>
-            <input type="password" name="password" maxlength="12" placeholder="Password"
-            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+            <input type="password" name="password" maxlength="20" placeholder="Password"
+            pattern="(?=^.{8,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
           </div>
           <div>
             <label>First Name:</label>
@@ -31,9 +32,9 @@
             <input type="email" name="email" placeholder="Email" required/>
           </div>
           <div>
-            <label>Telephone: (format: XXX-XXX-XXXX)</label>
+            <label>Mobile phone: (format: XXXXXXXXXX)</label>
             <input type="tel" name="tel" placeholder="Telephone"
-            pattern="\d{3}[\-]\d{3}[\-]\d{4}" required/>
+            pattern="\d{10}" required/>
           </div>
           <div>
             <label>Date of Birth:</label>
