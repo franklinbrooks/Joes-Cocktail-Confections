@@ -1,15 +1,11 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+        <h1> <%= title %> </h1>
     <main>
       <div class="container">
         <div class="wrapper">
-          <p>User Profile Page</p>
-          <p><%= user.firstName %></p>
-          <p><%= user.lastName %></p>
-          <p><%= user.email %></p>
-          <p><%= user.dob %></p>
-          <a href="/auth/logout">LOG OUT</a>
+
         </div>
       </div>
     </main>
