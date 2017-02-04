@@ -1,2 +1,50 @@
+.carousel .carousel-slider {
+  height: 550px; }
+
+/*.carousel-item img {*/
+/*width: 300px !important; */
+/*height: 275px !important;
+    }*/
+li:active {
+  background-color: teal; }
+
+h1 span img {
+  height: 25vw;
+  width: 45vw; }
+
+h1 {
+  font-family: 'Codystar', cursive;
+  color: blue;
+  font-size: 10vw;
+  animation: flash 2s infinite; }
+
+@keyframes flash {
+  0% {
+    color: #00cccf; }
+  25% {
+    color: rgba(97, 41, 218, 0.8); }
+  50% {
+    color: #00cccf; }
+  75% {
+    color: rgba(97, 41, 218, 0.9); }
+  100% {
+    color: #00cccf; } }
+
+.brand-logo {
+  font-family: 'Codystar', cursive;
+  color: white;
+  animation: blink 2s infinite; }
+
+@keyframes blink {
+  0% {
+    color: rgba(255, 255, 255, 0.8); }
+  25% {
+    color: #f8f8f8; }
+  50% {
+    color: rgba(240, 240, 80, 0.9); }
+  75% {
+    color: rgba(224, 224, 224, 0.9); }
+  100% {
+    color: rgba(232, 232, 232, 0.8); } }
 
 /*# sourceMappingURL=style.css.map */
