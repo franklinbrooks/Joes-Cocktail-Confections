@@ -3,10 +3,38 @@
     <% include ../partials/header.ejs %>
         <h1> <%= title %> </h1>
     <main>
-      <h1>This will be an item page</h1>
+      <h1><%= productDetails.productName %></h1>
       <div class="container">
         <div class="wrapper">
+          <p>
+            <span>Category</span>
+            <%= productDetails.category %>
+          </p>
+          <p>
+            <span></span>
+            <%= productDetails.alcohol %>
+          </p>
+          <p>
+            <span></span>
+            <%= productDetails.unitSize%>
+          </p>
+          <p>
+            <span></span>
+            <%= productDetails.description%>
+          </p>
+          <p>
+            <span></span>
+            <%= productDetails.dietaryRestrictions%>
+          </p>
+          <p>
+            <span></span>
+            <%= productDetails.price %>
+          </p>
 
+
+
+
+          <p>category alcohol unitSize description dietaryRestrictions   price
         </div>
       </div>
     </main>
