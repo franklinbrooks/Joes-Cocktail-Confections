@@ -1,40 +1,46 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-        <h1> <%= title %> </h1>
     <main>
       <h1><%= productDetails.productName %></h1>
       <div class="container">
         <div class="wrapper">
+          <!-- Product Image -->
+          <p>
+            <img src='<%= productDetails.image %>' />
+          </p>
+          <!-- Product Category -->
           <p>
             <span>Category</span>
             <%= productDetails.category %>
           </p>
+          <!--Alcohol Content Info -->
           <p>
-            <span></span>
-            <%= productDetails.alcohol %>
+            <span>Alcholic:</span>
+            <!-- Checking if it's alcolohic -->
+            <%= productDetails.alcohol?productDetails.alcohol='Yes.':productDetails.alcohol='No.'  %>
           </p>
+          <!-- Product Size - Order Count -->
           <p>
-            <span></span>
+            <span>Quantity:</span>
             <%= productDetails.unitSize%>
           </p>
+          <!-- Product Description -->
           <p>
-            <span></span>
+            <span>Description:</span>
             <%= productDetails.description%>
           </p>
+          <!--Ingredients / Dietary Info -->
           <p>
-            <span></span>
+            <span>Ingredients:</span>
             <%= productDetails.dietaryRestrictions%>
           </p>
+          <!-- Price -->
           <p>
-            <span></span>
+            <span>Price:</span>
             <%= productDetails.price %>
           </p>
 
-
-
-
-          <p>category alcohol unitSize description dietaryRestrictions   price
         </div>
       </div>
     </main>
