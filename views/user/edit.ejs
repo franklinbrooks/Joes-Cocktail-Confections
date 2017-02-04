@@ -8,44 +8,47 @@
         <label>Edit your account</label>
         <br>
         <br>
-        <form action="/auth/register" method="post" autocomplete="on">
+        <form action="/user/edit" method="post" autocomplete="on">
           <div>
             <label>Username: (Max 12 characters)</label>
-            <input type="text" name="user_name" maxlength="12" value="" required
+            <input type="text" name="username" maxlength="12" value="<%= user.username %>" required
               />
           </div>
           <div>
             <label>Password: (8-12 characters)</label>
-            <input type="password" name="password" maxlength="12" value=""
+            <input type="password" name="password" maxlength="12" value="<%= user.password %>"
              required/>
           </div>
           <div>
             <label>First Name:</label>
-            <input type="text" name="first_name" maxlength="12" value="" required/>
+            <input type="text" name="firstName" maxlength="12" value="<%= user.firstName %>" required/>
           </div>
           <div>
             <label>Last Name:</label>
-            <input type="text" name="last_name" maxlength="12" value="" required/>
+            <input type="text" name="lastName" maxlength="12" value="<%= user.lastName %>" required/>
           </div>
           <div>
             <label>Email:</label>
-            <input type="email" name="email" value="" required/>
+            <input type="email" name="email" value="<%= user.email %>" required/>
           </div>
           <div>
-            <label>Telephone: (format: XXXXXXXXXX)</label>
-            <input type="tel" name="cell_number" value=""
+            <label>Mobile telephone number: (format: XXXXXXXXXX)</label>
+            <input type="tel" name="cellNumber" value="<%= user.cellNumber %>"
             required/>
           </div>
           <div>
             <label>Date of Birth:</label>
-            <input type="date" name="dob" value="" required/>
+            <input type="date" name="dob" value="<%= user.dob %>" required/>
           </div>
           <div>
             <input type="submit" value="Update account"/>
           </div>
         </form>
+
       </div>
     </main>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
+
+

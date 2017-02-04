@@ -21,18 +21,21 @@ router.get('/edit', function(req, res, next) {
   });
 });
 
-/*
-router.put('/:id', function(req, res, next) {
-  models.User.update({ // more sequelizer
-    email: req.body.email,
+router.put('/edit', function(req, res, next) { // edit user info
+  models.Users.update({ // more sequelizer  // 'User' (orig) or 'user'????
+    username: req.body.username,
+    password: hash,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    dob: req.body.dob
-  }, { where: { id: req.params.id } }).then(function() {
-    res.redirect('/users/' + req.params.id);
+    email: req.body.email,
+    dob: req.body.dob,
+    cellNumber: req.body.cellNumber
+  }, { where: { username: req.body.username } }).then(function() {
+    res.redirect('/user/index');
   });
 });
 
+/*
 router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
   models.User.destroy({
     where: { id: req.params.id }
