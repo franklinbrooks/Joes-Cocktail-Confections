@@ -7,7 +7,7 @@ router.get('/test', function(req, res, next) {
   console.log('I hear you');
   // id should be req.params.id to allow for dynamic content. Am using 1 for testing
 
-  models.Product.findById(1).then(function(product) {
+  models.Product.findById(7).then(function(product) {
 
     res.render('products/item',
     { productDetails: product,
