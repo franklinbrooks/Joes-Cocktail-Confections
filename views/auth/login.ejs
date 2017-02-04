@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<% include ../partials/head.ejs %>
+  <% include ../partials/head.ejs %>
 <body>
   <% include ../partials/header.ejs %>
 
@@ -11,12 +11,14 @@
           <div>
             <label>Username:</label>
               <input type="text" name="username" maxlength="12" placeholder="Username"
-              pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" required/>
+              required/>
+              <%# pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" %>
           </div>
           <div>
             <label>Password:</label>
               <input type="password" name="password" maxlength="12" placeholder="Password"
-              pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+               required/>
+               <%# pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"%>
            </div>
           <div>
             <input type="submit" value="Log In"/>
@@ -25,6 +27,6 @@
       </div>
     </main>
 
-  <% include ../partials/footer.ejs %>
+    <% include ../partials/footer.ejs %>
 </body>
 </html>

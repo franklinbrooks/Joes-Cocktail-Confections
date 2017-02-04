@@ -1,30 +1,41 @@
+/* Importing bcrypt */
 const bcrypt = require('bcryptjs');
+
 const models = require('../db/models/index');
 
+/* Function to compare password */
 function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
 
-function createUser(req, res) {
-  const salt = bcrypt.genSaltSync();
-  const hash = bcrypt.hashSync(req.body.password, salt);
-  return models.User.create({
-    user_name: req.body.user_name,
-    password: hash,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    cell_number:req.body.cell_number,
-    dob: req.body.dob
-  });
-}
-function loginRequired(req, res, next) {
-  if (!req.user) res.redirect('/auth/login');
+/* Login Redirect Function */
+function loginRedirect(req, res, next) {
+  console.log('login Redirect', req.username);
+  if (req.user) res.redirect('/user');
+
   return next();
 }
 
-function loginRedirect(req, res, next) {
-  if (req.user) res.redirect('/user');
+/* Creating a user */
+function createUser(req, res) {
+  const salt = bcrypt.genSaltSync();
+  const hash = bcrypt.hashSync(req.body.password, salt);
+
+  return models.User.create({
+    username: req.body.username,
+    password: hash,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    dob: req.body.dob,
+    cellNumber: req.body.cellNumber
+  });
+}
+
+/* Redirecting users who aren't logged in */
+function loginRequired(req, res, next) {
+  if (!req.user) res.redirect('/auth/login');
+
   return next();
 }
 

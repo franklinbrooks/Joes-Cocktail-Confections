@@ -1,36 +1,36 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
 const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 
-router.get('/register', function(req, res, next) {
+router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/register', {
     title: "Joe's Cocktail Confections - Register New Customer"
   });
 });
 
-function loginRedirect(req, res, next) {
-  if (req.user) res.redirect('/user');
-  return next();
-}
-
+/* Registration route */
 router.post('/register', (req, res, next)  => {
   authHelpers.createUser(req, res)
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
+
       res.redirect('/user');
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
 });
 
-router.get('/login', function(req, res, next) {
+/* Rendering log in page */
+router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login', {
     title: "Joe's Cocktail Confections - Customer Login"
   });
 });
 
+/*  Authenticating user password */
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/user',
     failureRedirect: '/auth/login',
@@ -38,6 +38,7 @@ router.post('/login', passport.authenticate('local', {
   })
 );
 
+/* Logging Out */
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');

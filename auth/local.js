@@ -1,4 +1,6 @@
+// importing passport
 const passport = require('passport');
+// importing passport-local
 const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');

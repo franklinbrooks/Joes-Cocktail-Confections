@@ -1,3 +1,4 @@
+/* importing passport module */
 const passport = require('passport');
 const models = require('../db/models/index');
 

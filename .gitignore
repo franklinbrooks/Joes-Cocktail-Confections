@@ -1,6 +1,9 @@
 #.env
 .env
 
+# Backup Folder
+Backup_Joe
+
 # Logs
 logs
 *.log

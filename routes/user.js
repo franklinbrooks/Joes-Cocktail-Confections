@@ -1,12 +1,16 @@
+// importing express
 var express = require('express');
+// invoking router method
 var router = express.Router();
+// importing auth helpers custom middleware
+const authHelpers = require('../auth/auth-helpers');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
+/* Rendering user page */
+router.get('/', authHelpers.loginRequired, (req, res, next) => {
   res.render('user/index', {
-    title: "Joe's Cocktail Confections - User Index"
+    user: req.user.dataValues,
+    title: 'Profile'
   });
 });
-
 
 module.exports = router;

@@ -1,9 +1,10 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Orders = sequelize.define('Orders', {
-    user_id: DataTypes.BIGINT,
+  var Order = sequelize.define('Order', {
+    userId: DataTypes.BIGINT,
+    productId: DataTypes.BIGINT,
     quantity: DataTypes.BIGINT,
-    delivery_date: DataTypes.DATE
+    deliveryDate: DataTypes.DATE
   }, {
     classMethods: {
       associate: function(models) {
@@ -11,5 +12,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return Orders;
+  return Order;
 };
