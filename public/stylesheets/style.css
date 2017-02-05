@@ -47,4 +47,16 @@ h1 {
   100% {
     color: rgba(232, 232, 232, 0.8); } }
 
+#itemView img {
+  width: 40%; }
+
+#itemView span {
+  font-weight: bold; }
+
+#selectQuantity {
+  display: block;
+  width: 25%;
+  color: black;
+  font-size: 1.2em; }
+
 /*# sourceMappingURL=style.css.map */
