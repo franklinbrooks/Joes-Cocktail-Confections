@@ -19,7 +19,7 @@ router.get('/', authHelpers.loginRequired, (req, res)=> {
 
 /* Creating Order */
 
-router.post('/newOrder', (req, res, next)  => {
+router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   orderHelpers.createOrder(req, res)
   .then((order) => {
       res.redirect('/order');

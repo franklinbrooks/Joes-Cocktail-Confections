@@ -6,10 +6,10 @@
       <div class="container">
         <div class="wrapper">
         <h1>Welcome, <%= user.username %> </h1>
-
         <a href="<%= '/user/' + user.id + '/edit' %>"><button>Edit User Profile</button></a>
         </div>
       </div>
+      <script> console.log('local');localStorage.setItem("lastname", "Smith")</script>
     </main>
     <% include ../partials/footer.ejs %>
   </body>

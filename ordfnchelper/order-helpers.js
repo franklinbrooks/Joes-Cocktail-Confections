@@ -12,12 +12,15 @@ function getOrders(req, res, next) {
   });
 }
 
-/* Creating an order */
+/*
+Creating an order
+Pulling User Id from request object
+*/
 function createOrder(req, res) {
   return models.Order.create({
     quantity: req.body.quantity,
     productId: req.body.productId,
-    userId: req.body.userId
+    userId: req.user.id
   });
 }
 /* Exporting functions */
