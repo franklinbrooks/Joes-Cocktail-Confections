@@ -4,7 +4,6 @@
     <main>
       <h1><%= productDetails.productName %></h1>
       <div class="container">
-
         <div class="wrapper" id="itemView">
 
           <!-- Product Image -->
@@ -19,6 +18,7 @@
           </p>
           <!--Alcohol Content Info -->
           <p>
+
 
             <span>Alchol Content:</span>
 
@@ -44,6 +44,7 @@
           <p>
 
             <span>Price: $</span>
+
             <%= (productDetails.price * 0.01)  %>
          </p>
          <form >
@@ -55,11 +56,13 @@
                <option value="3">3</option>
           </select>
            <!-- Add to Cart button -->
-          <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
+
 
             <span>Price:</span>
             <%= productDetails.price %>
           </p>
+
+         </form>
 
 
         </div>
