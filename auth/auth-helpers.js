@@ -1,6 +1,6 @@
 /* Importing bcrypt */
 const bcrypt = require('bcryptjs');
-
+/* Importing database */
 const models = require('../db/models/index');
 
 /* Function to compare password */
@@ -10,9 +10,7 @@ function comparePass(userPassword, databasePassword) {
 
 /* Login Redirect Function */
 function loginRedirect(req, res, next) {
-  console.log('login Redirect', req.username);
   if (req.user) res.redirect('/user');
-
   return next();
 }
 
@@ -20,7 +18,6 @@ function loginRedirect(req, res, next) {
 function createUser(req, res) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
-
   return models.User.create({
     username: req.body.username,
     password: hash,
@@ -32,10 +29,28 @@ function createUser(req, res) {
   });
 }
 
+/* Update password */
+/*function updatePassword(req, res) {
+  const salt = bcrypt.genSaltSync();
+  const hash = bcrypt.hashSync(req.body.password, salt);
+    return models.User.update({
+    password: hash
+  });
+}
+
+router.put('/:id', function(req, res, next) { // edit password version 2
+  models.User.update({
+    password: hash
+  }, { where: { id: req.params.id } })
+  .then(function() {
+    res.redirect('/user/' + req.params.id);
+  });
+});
+*/
+
 /* Redirecting users who aren't logged in */
 function loginRequired(req, res, next) {
   if (!req.user) res.redirect('/auth/login');
-
   return next();
 }
 

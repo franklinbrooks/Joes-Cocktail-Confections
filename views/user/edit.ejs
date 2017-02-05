@@ -8,17 +8,17 @@
         <label>Edit your account</label>
         <br>
         <br>
-        <form action="/user/edit" method="post" autocomplete="on">
+        <form action="<%= '/user/' + user.id + '?_method=PUT' %>" method="POST" autocomplete="on">
           <div>
             <label>Username: (Max 12 characters)</label>
             <input type="text" name="username" maxlength="12" value="<%= user.username %>" required
               />
           </div>
-          <div>
+<!--           <div>
             <label>Password: (8-12 characters)</label>
             <input type="password" name="password" maxlength="12" value="<%= user.password %>"
              required/>
-          </div>
+          </div> -->
           <div>
             <label>First Name:</label>
             <input type="text" name="firstName" maxlength="12" value="<%= user.firstName %>" required/>
@@ -41,14 +41,21 @@
             <input type="date" name="dob" value="<%= user.dob %>" required/>
           </div>
           <div>
-            <input type="submit" value="Update account"/>
+            <button type="submit">Update account</button>
           </div>
         </form>
-
+        <form action="<%= '/user/' + user.id + '?_method=DELETE' %>" method="POST">
+          <button onClick=alertUser() type="submit">Delete account</button>
+        </form>
       </div>
     </main>
     <% include ../partials/footer.ejs %>
   </body>
+<script>
+let alertUser = function() {
+    alert('Sorry to see you go!');
+}
+</script>
 </html>
 
 
