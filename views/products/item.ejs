@@ -1,12 +1,68 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-        <h1> <%= title %> </h1>
     <main>
-      <h1>This will be an item page</h1>
+      <h1><%= productDetails.productName %></h1>
       <div class="container">
-        <div class="wrapper">
+        <div class="wrapper" id="itemView">
+<<<<<<< HEAD
 
+=======
+>>>>>>> e03f093dc5c45cc0d6f66713dd220036f11075a3
+          <!-- Product Image -->
+          <p>
+            <img src='<%= productDetails.image %>' />
+          </p>
+          <!-- Product Category -->
+          <p>
+            <span>Category:</span>
+            <%= productDetails.category %>
+          </p>
+          <!--Alcohol Content Info -->
+          <p>
+            <span>Alchol Content:</span>
+            <!-- Checking if it's alcolohic -->
+            <%= productDetails.alcohol?productDetails.alcohol='Yes.':productDetails.alcohol='No.'  %>
+          </p>
+          <!-- Product Size - Order Count -->
+          <p>
+            <span>Quantity:</span>
+            <%= productDetails.unitSize%>
+          </p>
+          <!-- Product Description -->
+          <p>
+            <span>Description:</span>
+            <%= productDetails.description%>
+          </p>
+          <!--Ingredients / Dietary Info -->
+          <p>
+            <span>Ingredients:</span>
+            <%= productDetails.dietaryRestrictions%>
+          </p>
+          <!-- Price -->
+          <p>
+<<<<<<< HEAD
+          <span>Price: $</span>
+=======
+            <span>Price: $</span>
+>>>>>>> e03f093dc5c45cc0d6f66713dd220036f11075a3
+            <%= (productDetails.price * 0.01)  %>
+         </p>
+         <form >
+           <!-- Quantity. Materialize gave it a display of none by default? -->
+           <select name="quantity" id="selectQuantity">
+               <option>Select a quantity</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+          </select>
+           <!-- Add to Cart button -->
+          <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
+         </form>
+<<<<<<< HEAD
+
+=======
+>>>>>>> e03f093dc5c45cc0d6f66713dd220036f11075a3
         </div>
       </div>
     </main>
