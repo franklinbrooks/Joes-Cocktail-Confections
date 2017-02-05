@@ -3,19 +3,6 @@ var router = express.Router();
 var models = require('../db/models/index');
 const authHelpers = require('../auth/auth-helpers');
 
-/* item page route. Will show individual item details */
-router.get('/test', function(req, res, next) {
-  console.log('I hear you');
-  // id should be req.params.id to allow for dynamic content. Am using 1 for testing
-  models.Product.findById(7).then(function(product) {
-    res.render('products/item',
-    { productDetails: product,
-      title: `Joe's Cocktail Confections - ${product.productName}`
-    });
-  });
-});
-
-
 /* GET products listing. */
 
 router.get('/cupcakes', function(req, res, next) {  // main route
@@ -51,15 +38,18 @@ router.get('/strawberries', function(req, res, next) {
  });
 });
 
-
-/*
-router.get('/item', function(req, res, next) {
-  res.render('products/item', {
-    title: "Joe's Cocktail Confections - Item Detail"
+/* item page route. Will show individual item details */
+router.get('/:id', function(req, res, next) {
+  console.log('I hear you');
+  // id should be req.params.id to allow for dynamic content. Am using 1 for testing
+  models.Product.findById(req.params.id).then(function(product) {
+    res.render('products/item',
+    { productDetails: product,
+      title: `Joe's Cocktail Confections - ${product.productName}`
+    });
   });
 });
 
-*/
 
 
 module.exports = router;

@@ -19,14 +19,10 @@
                 <% } else {%>
                   <p>Alcohol Content: No</p>
                  <% };%>
-           <button><a href="#">View More</a></button>
+           <div><a class="waves-light btn-large blue"  href="/products/<%= cake.id %>">View More</a></div>
               </div>
        <% }) %>
-
-
-
-
-        </div>
+      </div>
       </div>
     </main>
     <% include ../partials/footer.ejs %>

@@ -7,25 +7,21 @@
           <h1><i>Cupcakes</i></h1>
 
        <% cupcakes.forEach(function(cupcake) {%>
-             <div>
-         <!--   <img src="/public/images<%=cupcake.image%>">
-              <img src="/images/cakes/uppineapplecake.jpg">" -->
-               <h4><%= cupcake.productName %></h4>
-               <p><%= cupcake.description %></p>
-              <p><%= cupcake.dietaryRestrictions %></p>
-              <p> Per Cupcake: <%= cupcake.price *.01 %></p>
-              <p> Minimum: <%= cupcake.unitSize%></p>
-                <%  if(cupcake.alcohol) {%>
-               <p>Alcohol Content: Yes</p>
-                <% } else {%>
-                  <p>Alcohol Content: No</p>
-                 <% };%>
-             <button><a href="<%= `./item/${cupcake.id}`%>" ">View More</a></button>
-              </div>
+          <div>
+            <img src="<%=cupcake.image%>">
+            <h4><%= cupcake.productName %></h4>
+            <p><%= cupcake.description %></p>
+            <p><%= cupcake.dietaryRestrictions %></p>
+            <p> Per Cupcake: <%= cupcake.price *.01 %></p>
+            <p> Minimum: <%= cupcake.unitSize%></p>
+            <%  if(cupcake.alcohol) {%>
+            <p>Alcohol Content: Yes</p>
+              <% } else {%>
+                <p>Alcohol Content: No</p>
+                <% };%>
+            <div><a class="waves-light btn-large blue"  href="/products/<%= cupcake.id %>">View More</a></div>
+          </div>
        <% }) %>
-       
-       <!-- For testing -->
-         <a href="/products/test">Seventh Cupcake</a>
         </div>
       </div>
     </main>
