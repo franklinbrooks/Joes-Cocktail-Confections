@@ -41,7 +41,7 @@
             <input type="date" name="dob" value="<%= user.dob %>" required/>
           </div>
           <div>
-            <input type="submit" value="Update account"/>
+            <button type="submit">Update account</button>
           </div>
         </form>
         <form action="<%= '/user/' + user.id + '?_method=DELETE' %>" method="POST">

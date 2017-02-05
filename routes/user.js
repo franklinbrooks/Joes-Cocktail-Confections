@@ -11,14 +11,13 @@ var models = require('../db/models/index');
 router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
   res.render('user/index', {
     user: req.user.dataValues,
-    title: 'Profile'
+    title: "Joe's Cocktail Confections - Profile"
   });
 });
 
 /* Rendering user edit page - WORKS */
 router.get('/:id/edit', function(req, res, next) { // WORKS
   res.render('user/edit', {
-    user: req.user.dataValues,
     title: "Joe's Cocktail Confections - Edit User",
     user: req.user.dataValues
   });

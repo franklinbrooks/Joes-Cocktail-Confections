@@ -1,11 +1,11 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-        <h1> User Page </h1>
+        <h1> <%= title %> </h1>
     <main>
       <div class="container">
         <div class="wrapper">
-        <h1>This is <%= user.username %>'s profile</h1>
+        <h1>Welcome, <%= user.username %> </h1>
 
         <button><a href="<%= '/user/' + user.id + '/edit' %>">Edit User Profile</a></button>
         </div>
