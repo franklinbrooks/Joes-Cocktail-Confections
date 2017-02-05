@@ -4,8 +4,6 @@
     <main>
       <div class="container">
         <div class="wrapper">
-
-
           <h1><i>Cupcakes</i></h1>
 
        <% cupcakes.forEach(function(cupcake) {%>
@@ -25,8 +23,9 @@
              <button><a href="<%= `./item/${cupcake.id}`%>" ">View More</a></button>
               </div>
        <% }) %>
-
-
+       
+       <!-- For testing -->
+         <a href="/products/test">Seventh Cupcake</a>
         </div>
       </div>
     </main>

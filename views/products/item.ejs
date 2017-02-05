@@ -38,7 +38,7 @@
           <!-- Price -->
           <p>
 
-          <span>Price: $</span>
+            <span>Price: $</span>
 
             <%= (productDetails.price * 0.01)  %>
          </p>
@@ -51,8 +51,16 @@
                <option value="3">3</option>
           </select>
            <!-- Add to Cart button -->
+
+            <span>Price:</span>
+            <%= productDetails.price %>
+          </p>
+
+         </form>
+
           <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
          </form>
+
 
         </div>
       </div>

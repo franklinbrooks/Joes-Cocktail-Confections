@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../db/models/index');
-
-
 const authHelpers = require('../auth/auth-helpers');
 
 /* item page route. Will show individual item details */
