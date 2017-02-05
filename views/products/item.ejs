@@ -42,7 +42,7 @@
 
             <%= (productDetails.price * 0.01)  %>
          </p>
-         <form>
+         <form action="/order/newOrder" method="post">
            <!-- Quantity. Materialize gave it a display of none by default? -->
            <!-- input field to hold product Id. Display of none. -->
            <input style="display:none" value='<%= productDetails.id %>' name="productId" />
