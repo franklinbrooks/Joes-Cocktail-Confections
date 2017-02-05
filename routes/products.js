@@ -3,7 +3,7 @@ var router = express.Router();
 var models = require('../db/models/index');
 
 const authHelpers = require('../auth/auth-helpers');
-const displayCupcakes = require('../ordfnchelper/displaycupcakes')
+
 
 /* GET products listing. */
 
