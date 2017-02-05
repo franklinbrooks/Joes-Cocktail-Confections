@@ -8,15 +8,12 @@ const authHelpers = require('../auth/auth-helpers');
 var models = require('../db/models/index');
 
 /* Render order cart summary */
-router.get('/', function(req, res, next) {  // main route
- models.Order.findAll({
-    where: { id: order.id } // How to pass in order id value???
-  }).then(function(items){
-    res.render('order/index', {
-      title: "Joe's Cocktail Confections - Your Order",
-      items: items
-    });
+router.get('/', authHelpers.loginRequired, (req, res)=> {
+  res.render('order/index', {
+    title: "Joe's Cocktail Confections - Your Order"
   });
 });
+
+/* Update route once ejs table variables are updated */
 
 module.exports = router;
