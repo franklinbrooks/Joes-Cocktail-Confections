@@ -16,7 +16,8 @@ function getOrders(req, res, next) {
 function createOrder(req, res) {
   return models.Order.create({
     quantity: req.body.quantity,
-    productId: req.body.productId
+    productId: req.body.productId,
+    userId: req.body.userId
   });
 }
 /* Exporting functions */
