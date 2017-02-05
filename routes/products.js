@@ -14,8 +14,6 @@ router.get('/test', function(req, res, next) {
   });
 });
 
-
-
 /* GET products listing. */
 router.get('/cupcakes', function(req, res, next) {
   res.render('products/cupcakes', {
@@ -52,5 +50,6 @@ router.get('/item', function(req, res, next) {
 });
 
 */
+
 
 module.exports = router;
