@@ -44,3 +44,21 @@ h1 {
   75%{color: rgba(224,224,224,0.9); }
   100%{color: rgba(232,232,232, 0.8); }
 }
+
+// Item View Page
+#itemView {
+  img {
+    width:40%
+  }
+  // Headings
+  span {
+    font-weight: bold;
+  }
+}
+// Select Element -- Item View Page
+#selectQuantity {
+  display:block;
+  width:25%;
+  color:black;
+  font-size:1.2em;
+}
