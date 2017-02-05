@@ -6,13 +6,28 @@ var router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 // import sequelizer for POST routes
 var models = require('../db/models/index');
+// importing custom order helpers middleware to create an order
+const orderHelpers = require('../ordfnchelper/order-helpers');
+// const axios = require('axios');
 
-/* Render order cart summary */
 router.get('/', authHelpers.loginRequired, (req, res)=> {
   res.render('order/index', {
     title: "Joe's Cocktail Confections - Your Order"
   });
+
 });
+
+/* Creating Order */
+
+router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
+  orderHelpers.createOrder(req, res)
+  .then((order) => {
+      res.redirect('/order');
+    })
+    .catch((err) => { res.status(500).json({ status: 'error' });
+  })
+});
+
 
 /* Update route once ejs table variables are updated */
 
