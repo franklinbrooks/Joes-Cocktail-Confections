@@ -4,31 +4,27 @@
     <main>
       <div class="container">
         <div class="wrapper">
-          <h1> <%= title %> </h1>
-          <h1>Cupcakes page</h1>
-          <!-- Testing -->
-          <div>
-            <!-- test will need to be changed to id -->
-            <!--
-              First item is alcohlic
-              <a href="/products/test">Firt Cupcake</a>
-            -->
-            <!-- Seventh item is not alcoholic -->
 
-            <a href="/products/test">Seventh Cupcake</a>
-          </div>
 
-          <!-- Testing -->
-          <div>
-            <!-- test will need to be changed to id -->
-            <!--
-              First item is alcohlic
-              <a href="/products/test">Firt Cupcake</a>
-            -->
-            <!-- Seventh item is not alcoholic -->
+          <h1><i>Cupcakes</i></h1>
 
-            <a href="/products/test">Seventh Cupcake</a>
-          </div>
+       <% cupcakes.forEach(function(cupcake) {%>
+             <div>
+         <!--   <img src="/public/images<%=cupcake.image%>">
+              <img src="/images/cakes/uppineapplecake.jpg">" -->
+               <h4><%= cupcake.productName %></h4>
+               <p><%= cupcake.description %></p>
+              <p><%= cupcake.dietaryRestrictions %></p>
+              <p> Per Cupcake: <%= cupcake.price *.01 %></p>
+              <p> Minimum: <%= cupcake.unitSize%></p>
+                <%  if(cupcake.alcohol) {%>
+               <p>Alcohol Content: Yes</p>
+                <% } else {%>
+                  <p>Alcohol Content: No</p>
+                 <% };%>
+             <button><a href="<%= `./item/${cupcake.id}`%>" ">View More</a></button>
+              </div>
+       <% }) %>
 
 
         </div>
