@@ -4,19 +4,19 @@
     <main>
       <h1><%= productDetails.productName %></h1>
       <div class="container">
-        <div class="wrapper">
+        <div class="wrapper" id="itemView">
           <!-- Product Image -->
           <p>
             <img src='<%= productDetails.image %>' />
           </p>
           <!-- Product Category -->
           <p>
-            <span>Category</span>
+            <span>Category:</span>
             <%= productDetails.category %>
           </p>
           <!--Alcohol Content Info -->
           <p>
-            <span>Alcholic:</span>
+            <span>Alchol Content:</span>
             <!-- Checking if it's alcolohic -->
             <%= productDetails.alcohol?productDetails.alcohol='Yes.':productDetails.alcohol='No.'  %>
           </p>
@@ -37,10 +37,20 @@
           </p>
           <!-- Price -->
           <p>
-            <span>Price:</span>
-            <%= productDetails.price %>
-          </p>
-
+            <span>Price: $</span>
+            <%= (productDetails.price * 0.01)  %>
+         </p>
+         <form >
+           <!-- Quantity. Materialize gave it a display of none by default? -->
+           <select name="quantity" id="selectQuantity">
+               <option>Select a quantity</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+          </select>
+           <!-- Add to Cart button -->
+          <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
+         </form>
         </div>
       </div>
     </main>
