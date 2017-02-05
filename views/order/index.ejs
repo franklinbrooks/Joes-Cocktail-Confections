@@ -1,0 +1,22 @@
+<% include ../partials/head.ejs %>
+  <body>
+    <% include ../partials/header.ejs %>
+    <main>
+      <div class="container">
+        <div class="wrapper">
+          <h1><i>Your Cart</i></h1>
+       <% order.forEach(function(item) {%>
+          <div>
+            <img src="<%=item.image%>">
+            <p><%= item.productName %></p>
+            <p><%= cupcake.dietaryRestrictions %></p>
+            <p> Per Cupcake: <%= cupcake.price *.01 %></p>
+            <p> Minimum: <%= cupcake.unitSize%></p>
+          </div>
+       <% }) %>
+        </div>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>
