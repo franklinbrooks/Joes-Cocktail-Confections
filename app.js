@@ -7,19 +7,21 @@ var bodyParser = require('body-parser');
 
 const session = require('express-session');
 const passport = require('passport');
-
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const products = require('./routes/products');
 const app = express();
-
+const methodOverride = require('method-override'); // for edit/delete
 // load environment variables
 require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));  // for edit/delete
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -45,9 +47,7 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
-User Routes
-*/
+/* User Routes */
 app.use('/', index);
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);

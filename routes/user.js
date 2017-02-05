@@ -4,45 +4,51 @@ var express = require('express');
 var router = express.Router();
 // importing auth helpers custom middleware
 const authHelpers = require('../auth/auth-helpers');
-// var models = require('../server/models/index'); // need to import sequelizer???
+// import sequelizer for POST routes
+var models = require('../db/models/index');
 
-/* Rendering user page */
-router.get('/', authHelpers.loginRequired, (req, res, next) => {
+/* Rendering user home page - WORKS */
+router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
   res.render('user/index', {
     user: req.user.dataValues,
     title: 'Profile'
   });
 });
 
-router.get('/edit', function(req, res, next) {
+/* Rendering user edit page - WORKS */
+router.get('/:id/edit', function(req, res, next) { // WORKS
   res.render('user/edit', {
     user: req.user.dataValues,
-    title: "Joe's Cocktail Confections - Edit User"
+    title: "Joe's Cocktail Confections - Edit User",
+    user: req.user.dataValues
   });
 });
 
-router.put('/edit', function(req, res, next) { // edit user info
-  models.Users.update({ // more sequelizer  // 'User' (orig) or 'user'????
+/* POSTing user edits, then redirects to user home page */
+router.put('/:id', function(req, res, next) { // edit user info
+  models.User.update({ // more sequelizer
     username: req.body.username,
-    password: hash,
+    password: req.body.password,    // was hash, now does not encrypt pswd
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     dob: req.body.dob,
     cellNumber: req.body.cellNumber
-  }, { where: { username: req.body.username } }).then(function() {
-    res.redirect('/user/index');
+  }, { where: { id: req.params.id } })
+  .then(function() {
+    res.redirect('/user/' + req.params.id);
   });
 });
 
-/*
+/* POSTing user delete, then LOGOUT and send to root index page */
 router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
   models.User.destroy({
-    where: { id: req.params.id }
+    where: {
+      id: req.params.id
+    }
   }).then(function(user) {
-    res.redirect('/users');
+    res.redirect('/');
   });
 });
-*/
 
 module.exports = router;

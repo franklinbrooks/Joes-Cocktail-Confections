@@ -7,7 +7,7 @@
         <div class="wrapper">
         <h1>This is <%= user.username %>'s profile</h1>
 
-        <button><a href="<%= '/user/edit' %>">Edit User Profile</a></button>
+        <button><a href="<%= '/user/' + user.id + '/edit' %>">Edit User Profile</a></button>
         </div>
       </div>
     </main>
