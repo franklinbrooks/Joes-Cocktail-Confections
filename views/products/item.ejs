@@ -22,7 +22,7 @@
           </p>
           <!-- Product Size - Order Count -->
           <p>
-            <span>Quantity:</span>
+            <span>Unit Size:</span>
             <%= productDetails.unitSize%>
           </p>
           <!-- Product Description -->
@@ -42,8 +42,10 @@
 
             <%= (productDetails.price * 0.01)  %>
          </p>
-         <form >
+         <form>
            <!-- Quantity. Materialize gave it a display of none by default? -->
+           <!-- input field to hold product Id. Display of none. -->
+           <input style="display:none" value='<%= productDetails.id %>' name="productId" />
            <select name="quantity" id="selectQuantity">
                <option>Select a quantity</option>
                <option value="1">1</option>
@@ -51,13 +53,6 @@
                <option value="3">3</option>
           </select>
            <!-- Add to Cart button -->
-
-            <span>Price:</span>
-            <%= productDetails.price %>
-          </p>
-
-         </form>
-
           <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
          </form>
 
