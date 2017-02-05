@@ -8,7 +8,7 @@
         <label>Edit your account</label>
         <br>
         <br>
-        <form action="/user/edit" method="post" autocomplete="on">
+        <form action="<%= '/user/' + user.id + '?_method=PUT' %>" method="POST" autocomplete="on">
           <div>
             <label>Username: (Max 12 characters)</label>
             <input type="text" name="username" maxlength="12" value="<%= user.username %>" required
@@ -44,11 +44,18 @@
             <input type="submit" value="Update account"/>
           </div>
         </form>
-
+        <form action="<%= '/user/' + user.id + '?_method=DELETE' %>" method="POST">
+          <button onClick=alertUser() type="submit">Delete account</button>
+        </form>
       </div>
     </main>
     <% include ../partials/footer.ejs %>
   </body>
+<script>
+let alertUser = function() {
+    alert('Sorry to see you go!');
+}
+</script>
 </html>
 
 
