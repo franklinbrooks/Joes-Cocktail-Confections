@@ -5,7 +5,6 @@
       <h1><%= productDetails.productName %></h1>
       <div class="container">
         <div class="wrapper" id="itemView">
-
           <!-- Product Image -->
           <p>
             <img src='<%= productDetails.image %>' />
@@ -13,15 +12,11 @@
           <!-- Product Category -->
           <p>
             <span>Category:</span>
-
             <%= productDetails.category %>
           </p>
           <!--Alcohol Content Info -->
           <p>
-
-
             <span>Alchol Content:</span>
-
             <!-- Checking if it's alcolohic -->
             <%= productDetails.alcohol?productDetails.alcohol='Yes.':productDetails.alcohol='No.'  %>
           </p>
@@ -57,11 +52,13 @@
           </select>
            <!-- Add to Cart button -->
 
-
             <span>Price:</span>
             <%= productDetails.price %>
           </p>
 
+         </form>
+
+          <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
          </form>
 
 
