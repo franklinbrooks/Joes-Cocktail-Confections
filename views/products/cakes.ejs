@@ -1,11 +1,31 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-        <h1> <%= title %> </h1>
+
     <main>
       <div class="container">
         <div class="wrapper">
-<h1><i>Cakes</i></h1>
+         <h1><i>Cakes</i></h1>
+
+         <% cakes.forEach(function(cake) {%>
+             <div>
+               <h4><%= cake.productName %></h4>
+               <p><%= cake.description %></p>
+              <p><%= cake.dietaryRestrictions %></p>
+              <p> <%= cake.price *.1%></p>
+
+                <%  if(cake.alcohol) {%>
+               <p>Alcohol Content: Yes</p>
+                <% } else {%>
+                  <p>Alcohol Content: No</p>
+                 <% };%>
+           <button><a href="#">View More</a></button>
+              </div>
+       <% }) %>
+
+
+
+
         </div>
       </div>
     </main>

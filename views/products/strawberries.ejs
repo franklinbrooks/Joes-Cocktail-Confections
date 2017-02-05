@@ -1,12 +1,34 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-        <h1> <%= title %> </h1>
+
     <main>
       <div class="container">
         <div class="wrapper">
-          <h1>This will be the strawberries page</h1>
-<h1><i>Coming soon!</i></h1>
+
+
+  <h1><i>Strawberries</i></h1>
+<% strawberries.forEach(function(strawberry) {%>
+             <div>
+               <h4><%= strawberry.productName %></h4>
+
+               <p><%= strawberry.description %></p>
+              <p><%= strawberry.dietaryRestrictions %></p>
+
+              <p> Per Cupcake: <%= strawberry.price *.01 %></p>
+
+                <%  if(strawberry.alcohol) {%>
+               <p>Alcohol Content: Yes</p>
+                <% } else {%>
+                  <p>Alcohol Content: No</p>
+                 <% };%>
+
+             <button><a href="#">View More</a></button>
+              </div>
+       <% }) %>
+
+
+
         </div>
       </div>
     </main>
