@@ -58,7 +58,21 @@ router.get('/item', function(req, res, next) {
     title: "Joe's Cocktail Confections - Item Detail"
   });
 });
+*/
 
+router.get('/item/:id', function(req, res, next) {
+models.Product.findById(req.params.id).then(function(products) {
+  res.render('products/item', {
+    title: "Joe's Cocktail Confections - Item Detail"
+  });
+});
+
+/*
+router.get('/item/:id', function(req, res, next) {
+  res.render('products/item', {
+    title: "Joe's Cocktail Confections - Item Detail"
+  });
+});
 */
 
 
