@@ -29,7 +29,11 @@ const orderHelpers = require('../ordfnchelper/order-helpers');
 //   });
 // });
 
-router.get('/', orderHelpers.getOrders, function(req,res,next) {
+/*
+Custom orderHelpers middleware to get order based off off user id
+Route is protected and requires login
+*/
+router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
   console.log('REsponseX', res);
   console.log('orders',res.locals.orders);
 
