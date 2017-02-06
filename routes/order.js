@@ -26,10 +26,12 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   })
 });
 
-router.get('/', function(req, res, next) {  // main route
+router.get('/', orderHelpers.getOrders, function(req, res, next) {
+console.log('orders');
  models.Order.findAll({
-    where: { userId: req.user.id }
+    where: { id: '3' }
   }).then(function(items){
+    console.log(items);
     res.render('/order', {
       title: "Cupcakes - Joe's Cocktail Confections",
       items: items
