@@ -32,13 +32,12 @@ const orderHelpers = require('../ordfnchelper/order-helpers');
 router.get('/', orderHelpers.getOrders, function(req,res,next) {
   console.log('REsponseX', res);
   console.log('orders',res.locals.orders);
-  // function(res.locals.orders){
-  //   console.log('Items:',function(){items.forEach(function(item){console.log(item)})  }() );
-  //   res.render('order/cart', {
-  //     title: "Cupcakes - Joe's Cocktail Confections",
-  //     items: items
-  //   });
-  // });
+
+    res.render('order/cart', {
+      title: "Cupcakes - Joe's Cocktail Confections",
+      items: res.locals.orders
+    });
+
 });
 
 
