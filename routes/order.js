@@ -16,6 +16,32 @@ const orderHelpers = require('../ordfnchelper/order-helpers');
 //   });
 
 // });
+// router.get('/', orderHelpers.getOrders, function(req, res, next) {
+// console.log('order');
+//  models.Order.findAll({
+//     where: { id: '3' }
+//   }).then(function(items){
+//     console.log('Items:',function(){items.forEach(function(item){console.log(item)})  }() );
+//     res.render('order/cart', {
+//       title: "Cupcakes - Joe's Cocktail Confections",
+//       items: items
+//     });
+//   });
+// });
+
+router.get('/', orderHelpers.getOrders, function(req,res,next) {
+  console.log('REsponseX', res);
+  console.log('orders',res.locals.orders);
+  // function(res.locals.orders){
+  //   console.log('Items:',function(){items.forEach(function(item){console.log(item)})  }() );
+  //   res.render('order/cart', {
+  //     title: "Cupcakes - Joe's Cocktail Confections",
+  //     items: items
+  //   });
+  // });
+});
+
+
 /* Creating Order */
 router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   orderHelpers.createOrder(req, res)
@@ -26,22 +52,11 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   })
 });
 
-router.get('/', orderHelpers.getOrders, function(req, res, next) {
-console.log('orders');
- models.Order.findAll({
-    where: { id: '3' }
-  }).then(function(items){
-    console.log(items);
-    res.render('/cart', {
-      title: "Cupcakes - Joe's Cocktail Confections",
-      items: items
-    });
-  });
-});
 
-router.get('/cart', function(req,res,next) {
-  res.send('cart')
-})
+
+// router.get('/cart', function(req,res,next) {
+//
+// })
 
 /* Update route once ejs table variables are updated */
 
