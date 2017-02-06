@@ -8,6 +8,8 @@ const authHelpers = require('../auth/auth-helpers');
 var models = require('../db/models/index');
 // importing custom order helpers middleware to create an order
 const orderHelpers = require('../ordfnchelper/order-helpers');
+// node mailer
+const nodemailer = require('nodemailer');
 
 /*
 Shopping Cart Page
@@ -31,6 +33,39 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
     })
     .catch((err) => { res.status(500).json({ status: 'error' });
   })
+});
+
+/* Submitting an order - using nodemailer */
+router.get('/submitOrder', (req, res, next) => {
+  console.log(process.env.YAHOO_USERNAME)
+    console.log(process.env.YAHOO_PASSWORD)
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+          user:process.env.YAHOO_USERNAME,
+          pass:process.env.YAHOO_PASSWORD
+      }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: '"Test 👻" <foo@blurdybloop.com>', // sender address
+      to: 'bar@blurdybloop.com, hello243@mailinator.com', // list of receivers
+      subject: 'Hello ✔', // Subject line
+      text: 'Hello world ?', // plain text body
+      html: '<b>Hello world ?</b>' // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+      res.redirect('/')
+  });
+
 });
 
 
