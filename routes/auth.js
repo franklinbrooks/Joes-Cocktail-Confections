@@ -19,7 +19,7 @@ router.post('/register', (req, res, next)  => {
       res.redirect('/user/:id');
     });
   })
-  .catch((err) => { res.status(500).json({ status: 'error' }); });
+  .catch((err) => { res.status(500).render('errortaken2'); });
 });
 
 /* Rendering log in page */
