@@ -6,12 +6,15 @@ var router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 // import sequelizer for POST routes
 var models = require('../db/models/index');
+//global username variable set to null to allow for conditional rendering of header
+const username = null;
 
 /* Rendering user home page - WORKS */
 router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
   res.render('user/index', {
     user: req.user.dataValues,
-    title: "Joe's Cocktail Confections - Profile"
+    title: "Joe's Cocktail Confections - Profile",
+    username:username
   });
 });
 
@@ -19,7 +22,8 @@ router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
 router.get('/:id/edit', function(req, res, next) { // WORKS
   res.render('user/edit', {
     title: "Joe's Cocktail Confections - Edit User",
-    user: req.user.dataValues
+    user: req.user.dataValues,
+    username:username
   });
 });
 

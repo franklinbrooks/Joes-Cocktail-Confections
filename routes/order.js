@@ -21,7 +21,7 @@ Route is protected and requires login
 router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
     res.render('order/cart', {
       title: "Cupcakes - Joe's Cocktail Confections",
-      items: res.locals.orders
+      items: res.locals.orders,
     });
 
 });

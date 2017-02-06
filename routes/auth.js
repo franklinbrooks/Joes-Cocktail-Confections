@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
-
 const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
+//global username variable set to null to allow for conditional rendering of header
+const username = null;
+
 
 router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/register', {
-    title: "Joe's Cocktail Confections - Register New Customer"
+    title: "Joe's Cocktail Confections - Register New Customer",
+    username:username
   });
 });
 
@@ -25,7 +28,8 @@ router.post('/register', (req, res, next)  => {
 /* Rendering log in page */
 router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login', {
-    title: "Joe's Cocktail Confections - Customer Login"
+    title: "Joe's Cocktail Confections - Customer Login",
+    username:username
   });
 });
 
