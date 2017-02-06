@@ -50,16 +50,19 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
           pass:process.env.GMAIL_PASSWORD
       }
   });
-  // creating a variable to hold orders, outputting username and cellnumber from request object
+  /*
+  creating a variable to hold orders, outputting username and cellnumber from request object
+  */
   let mail = `
     <p>
        <strong>Name:</strong>
        ${req.user.username}
        <br />
-       <strong>CellNumber:</strong>
+       <strong>Cell Number:</strong>
        ${req.user.cellNumber}
-       <hr />
+       <br />
        <strong>Order Submitted:</strong>${moment().format('MMMM Do YYYY, h:mm:ss a')}
+       <hr />
     </p>`;
   // using a for loop to iterate through orders array and store in a variable
   for(let index of res.locals.orders) {
@@ -71,11 +74,9 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
       `
   }
 
-
-
   // setting up email
   let mailOptions = {
-      from: '"Joe`s Cocktail Confections 👻" <foo@blurdybloop.com>', // sender address
+      from: '"Joe`s Cocktail Confections" <foo@blurdybloop.com>', // sender address
       to: 'hello244@mailinator.com, hello243@mailinator.com', // list of receivers
       subject: `${req.user.username} has submitted an order`, // Subject line
       html:
