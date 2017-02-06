@@ -1,41 +1,39 @@
 <% include ../../partials/head.ejs %>
-
-  <body>
-    <% include ../../partials/header.ejs %>
-    <main>
-      <div class="container">
-        <div class="wrapper">
-          <h1><i>Your Cart</i></h1>
-          <form action="/order/submitOrder">
-          <!-- Function to iterate through the response object and return the user's orders -->
-          <% items.forEach(function(item) {%>
-          <% console.log(item) %>
-            <div>
-              <h4><%= item.productName %></h4>
-              <p>
-                <span>Category:</span>
-                <%= item.category %></p>
-              <p>
-                <span>Price:</span>
-                <%= item.price %></p>
-              <p value="<%= item.quantity %>" name="quantity">
-                <span>Quantity:</span>
-                <%= item.quantity %>
-
-              </p>
-              <hr />
+<body>
+  <% include ../../partials/header.ejs %>
+  <main>
+    <div class="container">
+      <div class="wrapper">
+        <h1><i>Your Cart</i></h1>
+        <form action="/order/submitOrder">
+        <!-- Function to iterate through the response object and return the user's orders -->
+        <% items.forEach(function(item) {%>
+        <% console.log(item.id) %>
+          <div>
+            <h4><%= item.productName %></h4>
+            <p>Category: <%= item.category %></p>
+            <p>Price per item: $<%= (item.price * 0.01).toFixed(2) %>
+            </p>
+            <p value= "<%= item.quantity %>" name="quantity">Quantity: <%= item.quantity %> Dozen
+            </p>
+            <p>Extended price: $<%= ((item.price * item.quantity * 12) * 0.01).toFixed(2) %>
+            </p>
+            <form action="<%= '/order/' + item.id + '?_method=DELETE' %>" method="POST">
+              <button onClick=alert("Deleted!") type="submit" class="waves-light btn-large blue">Remove Item</button>
+            </form>
+            <br>
+            <hr>
         <% }) %>
+          </div>
         </div>
-      </div>
-
-        <input type="submit" value="Submit Order" />
+      <button class="waves-light btn-large blue" type="submit">SUBMIT ORDER</button>
       </form>
+      <br>
+      <br>
         </div>
       </div>
     </main>
     <script src="/javascripts/getOrders.js"></script>
-
     <% include ../../partials/footer.ejs %>
-
   </body>
 </html>

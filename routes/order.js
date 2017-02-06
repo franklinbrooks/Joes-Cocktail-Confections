@@ -15,7 +15,7 @@ const moment = require('moment');
 
 /*
 Shopping Cart Page
-Custom orderHelpers middleware to get order based off off user id
+Custom orderHelpers middleware to get order based off of user id
 Route is protected and requires login
 */
 router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
@@ -23,7 +23,6 @@ router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,
       title: "Cupcakes - Joe's Cocktail Confections",
       items: res.locals.orders
     });
-
 });
 
 
@@ -35,6 +34,17 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
     })
     .catch((err) => { res.status(500).json({ status: 'error' });
   })
+});
+
+/* POSTing item delete, then back to order index page */
+router.delete('/order', function(req, res, next) {  // destroy processed by methodOverride
+  models.Order.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(order) {
+    res.redirect('/order');
+  });
 });
 
 /* Submitting an order - using nodemailer */
