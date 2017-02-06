@@ -37,14 +37,13 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 /* Submitting an order - using nodemailer */
 router.get('/submitOrder', (req, res, next) => {
-  console.log(process.env.YAHOO_USERNAME)
-    console.log(process.env.YAHOO_PASSWORD)
+  console.log(req);
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-          user:process.env.YAHOO_USERNAME,
-          pass:process.env.YAHOO_PASSWORD
+          user:process.env.GMAIL_USERNAME,
+          pass:process.env.GMAIL_PASSWORD
       }
   });
 
@@ -53,14 +52,15 @@ router.get('/submitOrder', (req, res, next) => {
       from: '"Test 👻" <foo@blurdybloop.com>', // sender address
       to: 'bar@blurdybloop.com, hello243@mailinator.com', // list of receivers
       subject: 'Hello ✔', // Subject line
-      text: 'Hello world ?', // plain text body
-      html: '<b>Hello world ?</b>' // html body
+      text: 'Testing!', // plain text body
+      html: '<b>Testing?</b>' // html body
   };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
           return console.log(error);
+          res.redirect('/error')
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
       res.redirect('/')
