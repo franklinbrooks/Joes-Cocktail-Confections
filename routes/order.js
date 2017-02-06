@@ -11,7 +11,7 @@ const orderHelpers = require('../ordfnchelper/order-helpers');
 // node mailer
 const nodemailer = require('nodemailer');
 // importing moment
-const moment = requier('moment');
+const moment = require('moment');
 
 /*
 Shopping Cart Page
