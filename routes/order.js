@@ -10,6 +10,8 @@ var models = require('../db/models/index');
 const orderHelpers = require('../ordfnchelper/order-helpers');
 // node mailer
 const nodemailer = require('nodemailer');
+// importing moment
+const moment = requier('moment');
 
 /*
 Shopping Cart Page
@@ -48,14 +50,24 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
           pass:process.env.GMAIL_PASSWORD
       }
   });
-  // creating a variable to hold orders
-  let mail = 'hello';
+  // creating a variable to hold orders, outputting username and cellnumber from request object
+  let mail = `
+    <p>
+       <strong>Name:</strong>
+       ${req.user.username}
+       <br />
+       <strong>CellNumber:</strong>
+       ${req.user.cellNumber}
+       <hr />
+       <strong>Order Submitted:</strong>${moment().format('MMMM Do YYYY, h:mm:ss a')}
+    </p>`;
   // using a for loop to iterate through orders array and store in a variable
   for(let index of res.locals.orders) {
      mail +=
-      ` <h1>
-        <p> + ${index.productName} + <br />
-        + <p>Quantity' + ${index.quantity} + </p><br />
+      `
+        <p>  ${index.productName}  <br />
+        <p>Quantity ${index.quantity}  </p> <br />
+        <hr />
       `
   }
 
@@ -63,10 +75,9 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
 
   // setting up email
   let mailOptions = {
-      from: '"Test 👻" <foo@blurdybloop.com>', // sender address
-      to: 'bar@blurdybloop.com, hello243@mailinator.com', // list of receivers
-      subject: `${req.user.username}`, // Subject line
-      text: req.user.username, // plain text body
+      from: '"Joe`s Cocktail Confections 👻" <foo@blurdybloop.com>', // sender address
+      to: 'hello244@mailinator.com, hello243@mailinator.com', // list of receivers
+      subject: `${req.user.username} has submitted an order`, // Subject line
       html:
         `<b>
           ${mail}
