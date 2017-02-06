@@ -77,7 +77,7 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
   // setting up email
   let mailOptions = {
       from: '"Joe`s Cocktail Confections" <foo@blurdybloop.com>', // sender address
-      to: 'hello244@mailinator.com, hello243@mailinator.com', // list of receivers
+      to: 'hello243@mailinator.com', // list of receivers
       subject: `${req.user.username} has submitted an order`, // Subject line
       html:
         `<b>
