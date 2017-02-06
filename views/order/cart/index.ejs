@@ -1,0 +1,37 @@
+<% include ../../partials/head.ejs %>
+
+  <body>
+    <% include ../../partials/header.ejs %>
+    <main>
+      <div class="container">
+        <div class="wrapper">
+          <h1><i>Your Cart</i></h1>
+    <!-- Function to iterate through the response object and return the user's orders -->
+    <% items.forEach(function(item) {%>
+    <% console.log(item) %>
+          <div>
+            <h4><%= item.productName %></h4>
+            <p>
+              <span>Category:</span>
+              <%= item.category %></p>
+            <p>
+              <span>Price:</span>
+              <%= item.price %></p>
+            <p>
+              <span>Quantity:</span>
+              <%= item.quantity%>
+            </p>
+            <hr />
+        <% }) %>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </main>
+    <script src="/javascripts/getOrders.js"></script>
+
+    <% include ../../partials/footer.ejs %>
+
+  </body>
+</html>

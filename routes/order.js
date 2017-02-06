@@ -8,15 +8,22 @@ const authHelpers = require('../auth/auth-helpers');
 var models = require('../db/models/index');
 // importing custom order helpers middleware to create an order
 const orderHelpers = require('../ordfnchelper/order-helpers');
-// const axios = require('axios');
 
-// router.get('/', authHelpers.loginRequired, (req, res)=> {
-//   res.render('order/index', {
-//     title: "Joe's Cocktail Confections - Your Order"
-//   });
+/*
+Shopping Cart Page
+Custom orderHelpers middleware to get order based off off user id
+Route is protected and requires login
+*/
+router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
+    res.render('order/cart', {
+      title: "Cupcakes - Joe's Cocktail Confections",
+      items: res.locals.orders
+    });
 
-// });
-/* Creating Order */
+});
+
+
+/* Creating Order - Add to Order Button  */
 router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   orderHelpers.createOrder(req, res)
   .then((order) => {
@@ -26,17 +33,5 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   })
 });
 
-router.get('/', function(req, res, next) {  // main route
- models.Order.findAll({
-    where: { userId: req.user.id }
-  }).then(function(items){
-    res.render('/order', {
-      title: "Cupcakes - Joe's Cocktail Confections",
-      items: items
-    });
-  });
-});
-
-/* Update route once ejs table variables are updated */
 
 module.exports = router;
