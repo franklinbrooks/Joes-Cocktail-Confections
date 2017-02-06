@@ -42,7 +42,9 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
   let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
+          // Reading username from process object
           user:process.env.GMAIL_USERNAME,
+          // Reading password from process object
           pass:process.env.GMAIL_PASSWORD
       }
   });
@@ -51,8 +53,10 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
   // using a for loop to iterate through orders array and store in a variable
   for(let index of res.locals.orders) {
      mail +=
-        index.productName + '<br /> '
-        + index.quantity + '<br />'
+      ` <h1>
+        <p> + ${index.productName} + <br />
+        + <p>Quantity' + ${index.quantity} + </p><br />
+      `
   }
 
 
