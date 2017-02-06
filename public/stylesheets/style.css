@@ -73,6 +73,7 @@ h1 {
   font-style: italic;
   font-weight: bold; }
 
+
 .feature {
   display: inline-block;
   margin: 0 auto; }
@@ -94,5 +95,9 @@ h1 {
 
 .grow:hover {
   transform: scale(1.1); }
+
+#logo {
+  height: 20%; }
+
 
 /*# sourceMappingURL=style.css.map */
