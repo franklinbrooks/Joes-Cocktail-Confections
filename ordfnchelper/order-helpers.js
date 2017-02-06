@@ -3,7 +3,7 @@ const models = require('../db/models/index');
 
 /* Getting orders */
 function getOrders(req, res, next) {
-  models.sequelize.query('SELECT "Products"."product_name", "Products"."category", "Products"."price", "Products"."unit_size", "Products"."alcohol", "User"."name" FROM"Users" JOIN "Orders" ON "Users"."id" = "Orders"."user_id"JOIN "Products" ON "Products"."id" = "Orders"."product_id" WHERE "Users"."id" = :id', {
+  models.sequelize.query('SELECT "Products"."productName", "Products"."category", "Products"."price", "Products"."unitSize", "Products"."alcohol", "User"."username" FROM"Users" JOIN "Orders" ON "Users"."id" = "Orders"."userId"JOIN "Products" ON "Products"."id" = "Orders"."productId" WHERE "Users"."id" = :id', {
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((orders) => {
