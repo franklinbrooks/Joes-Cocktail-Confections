@@ -1,26 +1,130 @@
 <!DOCTYPE html>
 <html>
 <% include partials/head.ejs %>
+<style>
+/*
+This is the visible area of you carousel.
+Set a width here to define how much items are visible.
+The width can be either fixed in px or flexible in %.
+Position must be relative!
+*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+}
+
+</style>
 <body>
   <% include partials/header.ejs %>
 <div class="container">
 <main>
-<h1> Joe's <span><img src="./images/logo.jpg"></span>NYC</h1>
+<%# <h1> Joe's <span><img id="logo" src="./images/logo.jpg"></span>NYC</h1>%>
 </main>
 </div>
-
-<div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="./images/cupcakes/platterccbgrd.jpg"></a>
-    <a class="carousel-item" href="#two!"><img src="./images/cupcakes/whitefrost.jpg"></a>
-    <a class="carousel-item" href="#three!"><img src="./images/cupcakes/redvelvet.jpg"></a>
-    <a class="carousel-item" href="#four!"><img src="./images/cupcakes/pinkhomecc.jpg"></a>
-    <a class="carousel-item" href="#five!"><img src="./images/cupcakes/assortedcc4.jpg"></a>
-    <a class="carousel-item" href="#six!"><img src="./images/strawberries/strawvodka.jpg"></a>
-    <a class="carousel-item" href="#seven!"><img src="./images/cupcakes/golden1.jpg"></a>
-    <a class="carousel-item" href="#eight!"><img src="./images/cupcakes/bluerainbow.jpg"></a>
+<!-- Materialize Slider -->
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="./images/cupcakes/platterccbgrd.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/whitefrost.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/redvelvet.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/pinkhomecc.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/assortedcc4.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/strawberries/strawvodka.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/golden1.jpg"><!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="./images/cupcakes/bluerainbow.jpg"><!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
   </div>
-<i class="fa fa-angle-left lg" aria-hidden="true"></i>
-<i class="fa fa-angle-right lg" aria-hidden="true"></i>
+  <!-- Back button -->
+  <i id="previous" class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+  <!-- Forward button -->
+  <i id="next" class="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
+
+  <script>
+  // Next button in slideshow
+  let next = document.querySelector('#next');
+  // Previous button in slideshow
+  let previous = document.querySelector('#previous');
+  // add evenet Listeners
+  next.addEventListener('click', ()=>$('.slider').slider('next') );
+  previous.addEventListener('click', ()=>$('.slider').slider('prev') );
+  </script>
+
+
+
+<!-- <i class="fa fa-angle-left lg" aria-hidden="true"></i> -->
+<%# <a class="jcarousel-control-next" aria-hidden="true"></a>%>
 
 <% include partials/footer.ejs %>
 
@@ -29,5 +133,6 @@
 
 
  <script type="text/javascript" src="./javascripts/index.js"></script>
+
 </body>
 </html>
