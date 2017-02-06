@@ -1,34 +1,20 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-
     <main>
       <div class="container">
         <div class="wrapper">
-
-
-  <h1><i>Strawberries</i></h1>
-<% strawberries.forEach(function(strawberry) {%>
-             <div>
-               <h4><%= strawberry.productName %></h4>
-
-               <p><%= strawberry.description %></p>
-              <p><%= strawberry.dietaryRestrictions %></p>
-
-              <p> Per Cupcake: <%= strawberry.price *.01 %></p>
-
-                <%  if(strawberry.alcohol) {%>
-               <p>Alcohol Content: Yes</p>
-                <% } else {%>
-                  <p>Alcohol Content: No</p>
-                 <% };%>
-
-             <div><a class="waves-light btn-large blue"  href="/products/<%= strawberry.id %>">View More</a></div>
-              </div>
-       <% }) %>
-
-
-
+          <h1><i>Strawberries</i></h1>
+            <% strawberries.forEach(function(strawberry) {%>
+          <div>
+            <img src="<%=strawberry.image%>" alt=" <%= strawberry.productName %> image" height="200" width="200" >
+            <h4><%= strawberry.productName %></h4>
+            <p> Priced From $ <%= (strawberry.price *.01).toFixed(2) %></p>
+            <div><a class="waves-light btn-large blue"  href="/products/<%= strawberry.id %>">View More</a></div>
+            <br>
+            <hr>
+            </div>
+          <% }) %>
         </div>
       </div>
     </main>
