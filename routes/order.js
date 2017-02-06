@@ -38,7 +38,7 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 /* Submitting an order - using nodemailer */
 router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
 
-  // create reusable transporter object using the default SMTP transport
+  // setting transport variable to nodemailer, invoking createTransport method, and passing gmail log in credentials as an object
   let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -46,18 +46,30 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
           pass:process.env.GMAIL_PASSWORD
       }
   });
+  // creating a variable to hold orders
+  let mail = 'hello';
+  // using a for loop to iterate through orders array and store in a variable
+  for(let index of res.locals.orders) {
+     mail +=
+        index.productName + '<br /> '
+        + index.quantity + '<br />'
+  }
 
-console.log(res.locals.orders);
-  // setup email data with unicode symbols
+
+
+  // setting up email
   let mailOptions = {
       from: '"Test 👻" <foo@blurdybloop.com>', // sender address
       to: 'bar@blurdybloop.com, hello243@mailinator.com', // list of receivers
       subject: `${req.user.username}`, // Subject line
       text: req.user.username, // plain text body
-      html: `<b>${res.locals.orders[0].productName}</b>` // html body
+      html:
+        `<b>
+          ${mail}
+        </b>` // html body
   };
 
-  // send mail with defined transport object
+  // sending email using sendEmail method
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
           return console.log(error);
