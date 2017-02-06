@@ -32,12 +32,16 @@ console.log('orders');
     where: { id: '3' }
   }).then(function(items){
     console.log(items);
-    res.render('/order', {
+    res.render('/cart', {
       title: "Cupcakes - Joe's Cocktail Confections",
       items: items
     });
   });
 });
+
+router.get('/cart', function(req,res,next) {
+  res.send('cart')
+})
 
 /* Update route once ejs table variables are updated */
 
