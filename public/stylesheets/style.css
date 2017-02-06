@@ -59,4 +59,18 @@ h1 {
   color: black;
   font-size: 1.2em; }
 
+.desc {
+  float: right;
+  background-color: #2196f3;
+  height: 100%;
+  width: 50%;
+  font-size: 2rem;
+  padding: 2%;
+  font-style: italic; }
+
+.desc h4 {
+  text-align: left;
+  font-style: italic;
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

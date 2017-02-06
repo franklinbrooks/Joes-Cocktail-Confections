@@ -1,46 +1,48 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-    <main>
-      <h1><%= productDetails.productName %></h1>
-      <div class="container">
-        <div class="wrapper" id="itemView">
-          <!-- Product Image -->
-          <p>
-            <img src='<%= productDetails.image %>' />
-          </p>
+    <div class="container">
+      <div class="wrapper" id="itemView">
+        <main>
+        <br>
           <!-- Product Category -->
           <p>
             <span>Category:</span>
             <%= productDetails.category %>
           </p>
+          <!-- Product Description H1 -->
+          <h1><%= productDetails.productName %></h1>
+          <!-- Product Description -->
+          <div class="desc">
+            <h4><%= productDetails.productName %>...</h4>
+            <%= productDetails.description%>
+          </div>
+          <!-- Product Image -->
+          <p>
+            <img class="materialboxed" src='<%= productDetails.image %>' />
+          </p>
+
           <!--Alcohol Content Info -->
           <p>
             <span>Alchol Content:</span>
             <!-- Checking if it's alcolohic -->
-            <%= productDetails.alcohol?productDetails.alcohol='Yes.':productDetails.alcohol='No.'  %>
+            <%= productDetails.alcohol?productDetails.alcohol='Yes':productDetails.alcohol='No'  %>
           </p>
           <!-- Product Size - Order Count -->
           <p>
-            <span>Unit Size:</span>
+            <span>Unit Size: </span>
             <%= productDetails.unitSize%>
-          </p>
-          <!-- Product Description -->
-          <p>
-            <span>Description:</span>
-            <%= productDetails.description%>
           </p>
           <!--Ingredients / Dietary Info -->
           <p>
-            <span>Ingredients:</span>
+            <span>Ingredients: </span>
             <%= productDetails.dietaryRestrictions%>
           </p>
           <!-- Price -->
           <p>
 
             <span>Price: $</span>
-
-            <%= (productDetails.price * 0.01)  %>
+            <%= (productDetails.price * 0.01).toFixed(2)  %> per cupcake
          </p>
          <form action="/order/newOrder" method="post">
            <!-- Quantity. Materialize gave it a display of none by default? -->
@@ -49,15 +51,15 @@
            <!-- input field to hold user id. Display of none -->
            <select name="quantity" id="selectQuantity">
                <option>Select a quantity</option>
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
+               <option value="1">1 Dozen @ $<%= (productDetails.price * 0.01)*12 %></option>
+               <option value="2">2 Dozen @ $<%= (productDetails.price * 0.01)*24 %></option>
+               <option value="3">3 Dozen @ $<%= (productDetails.price * 0.01)*36 %></option>
           </select>
+          <br>
            <!-- Add to Cart button -->
           <input class="waves-light btn-large blue" type="submit" value="Add to Cart" />
          </form>
-
-
+         <br>
         </div>
       </div>
     </main>
