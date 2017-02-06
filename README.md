@@ -1,7 +1,7 @@
 # Joe's Cocktail Confections Website
 
 ### Screenshot:
-  ![Screenshot](https://github.com/franklinbrooks/Joes...images/screenshot.png) 
+  ![Screenshot](https://github.com/franklinbrooks/Joes...images/screenshot.png)
 
 #### [Link to Live Site:](http://....com/)  
 #### [Link to Repo:](https://github.com/franklinbrooks/...)  
@@ -11,18 +11,20 @@
 A couple paragraphs about the general approach.
 Who are users, what do they want, and why?
 
-### Wireframes for project: 
+### Wireframes for project:
   ![Wireframe 1:](https://github.com/franklinbrooks/.....jpg)
 
 ### Technologies Used
 - HTML
 - CSS
 - JavaScript
-- Express.js 
+- Express.js
 - Postgres SQL
 - Sass CSS
 - Serialize ORM
 - Bcrypt
+- Momement.js
+- Nodemailer
 
 ### Installation instructions for dependencies
 This project includes a package.JSON file which provides details for the above dependencies and others.  These files are imported into the node_modules folder by Node Package Manager. One Ruby gem enables transpiling of Sass to CSS.  Finally, Font-Awesome and Materialize-CSS are linked via CDN.
@@ -33,11 +35,11 @@ This project includes a package.JSON file which provides details for the above d
 
 
 
-```` 
+````
 ### Build Strategy
 .....A couple paragraphs about the general approach you took...
 
-### Contributing 
+### Contributing
 This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, all!
 
 ### Minimum Viable Product
@@ -55,12 +57,12 @@ This project was developed as part of the Web Development Immersive program at G
 
 ### Unsolved problems or major hurdles team had to overcome
 
-### Possible Future Improvements 
+### Possible Future Improvements
   1. Addition of User invoicing via third-party payment API
   1. Implementation of email / SMS services like Twilio, Mailgun, etc.
-  1. Ability for Admin login 
+  1. Ability for Admin login
 
 ### Authors
   [Shantel Moore](moore.shantel@gmail.com)    
   [Dominic Farquharson](farquharsondominic@gmail.com)    
-  [Franklin Brooks](fcb@franklinchristopherbrooks.com) 
+  [Franklin Brooks](fcb@franklinchristopherbrooks.com)
