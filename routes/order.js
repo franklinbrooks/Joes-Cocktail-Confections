@@ -10,15 +10,13 @@ var models = require('../db/models/index');
 const orderHelpers = require('../ordfnchelper/order-helpers');
 // const axios = require('axios');
 
-router.get('/', authHelpers.loginRequired, (req, res)=> {
-  res.render('order/index', {
-    title: "Joe's Cocktail Confections - Your Order"
-  });
+// router.get('/', authHelpers.loginRequired, (req, res)=> {
+//   res.render('order/index', {
+//     title: "Joe's Cocktail Confections - Your Order"
+//   });
 
-});
-
+// });
 /* Creating Order */
-
 router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   orderHelpers.createOrder(req, res)
   .then((order) => {
@@ -28,6 +26,16 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
   })
 });
 
+router.get('/', function(req, res, next) {  // main route
+ models.Order.findAll({
+    where: { userId: req.user.id }
+  }).then(function(items){
+    res.render('/order', {
+      title: "Cupcakes - Joe's Cocktail Confections",
+      items: items
+    });
+  });
+});
 
 /* Update route once ejs table variables are updated */
 

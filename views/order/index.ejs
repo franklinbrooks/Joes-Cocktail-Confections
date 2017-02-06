@@ -6,7 +6,15 @@
       <div class="container">
         <div class="wrapper">
           <h1><i>Your Cart</i></h1>
-          
+ <% items.forEach(function(item) {%>
+          <div>
+            <img src="<%=cupcake.image%>">
+            <h4><%= item.productId %></h4>
+            <p><%= item.quantity %></p>
+            <p><%= item.deliveryDate %></p>
+           </div>
+          </div>
+        <% }) %>
 
         </div>
       </div>
