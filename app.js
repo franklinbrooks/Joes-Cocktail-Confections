@@ -12,6 +12,7 @@ const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const products = require('./routes/products');
 const order = require('./routes/order');
+const links = require('./routes/links');
 const app = express();
 const methodOverride = require('method-override'); // for edit/delete
 // load environment variables
@@ -54,6 +55,7 @@ app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/products', products);
 app.use('/order', order);
+app.use('/links', links);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
