@@ -38,10 +38,31 @@ router.get('/contact', function(req, res, next) {
   });
 });
 
+/* GET Events page. */
+router.get('/events', function(req, res, next) {
+  res.render('links/events', {
+    title: "Joe's Cocktail Confections - Contact Us"
+  });
+});
+
+/* GET Privacy page. */
+router.get('/privacy', function(req, res, next) {
+  res.render('links/privacy', {
+    title: "Joe's Cocktail Confections - Contact Us"
+  });
+});
+
 /* GET Terms page. */
 router.get('/terms', function(req, res, next) {
   res.render('links/terms', {
     title: "Joe's Cocktail Confections - Contact Us"
+  });
+});
+
+/* GET Testimonials page. */
+router.get('/testimonials', function(req, res, next) {
+  res.render('links/testimonials', {
+    title: "Joe's Cocktail Confections - Customer Testimonials"
   });
 });
 
