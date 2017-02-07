@@ -105,4 +105,7 @@ h1 {
 #float2 {
   display: inline-block; }
 
+.shadow {
+  text-shadow: 0 0 10px DimGray; }
+
 /*# sourceMappingURL=style.css.map */
