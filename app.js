@@ -57,11 +57,32 @@ app.use('/products', products);
 app.use('/order', order);
 app.use('/links', links);
 
+
+
+/*
 app.use(function (req, res, next) {
   res.render('error', {
     title: "Joe's Cocktail Confections - Error"
   });
 });
+*/
+// Handle 404 error page both error pages need to be at bottom of app.js
+app.use(function(req, res) {
+  res.status(400);
+  res.render('error', {
+    title: "Joe's Cocktail Confections - Error-404"
+  });
+});
+
+  // Handle 500 error page
+app.use(function(error, req, res, next) {
+  res.status(500);
+  res.render('errortaken', {
+    title: "Joe's Cocktail Confections - Error-500",
+    error: error
+  });
+});
+
 
 /* Below error handling routes replaced by custom 404 route above */
 // catch 404 and forward to error handler

@@ -19,10 +19,20 @@ Custom orderHelpers middleware to get order based off of user id
 Route is protected and requires login
 */
 router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
-    res.render('order/cart', {
-      title: "Cupcakes - Joe's Cocktail Confections",
-      items: res.locals.orders
-    });
+
+  
+  // setting username variable to null to allow for conditional rendering
+  let username = null;
+  if (req.user) {
+    username=req.user.username;
+  }
+  res.render('order/cart', {
+    title: "Cupcakes - Joe's Cocktail Confections",
+    items: res.locals.orders,
+    username: username
+  });
+
+
 });
 
 

@@ -5,16 +5,26 @@
         <!-- Hamburger menu -->
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- User Account Button -->
-          <li><a href="/auth/login"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+    <!-- Add Conditionial logic for Desktop Header -->
+
+          <!-- Header for logged out user -->
+          <% if(username==null) { %>
           <!-- Register Button -->
           <li><a href="/auth/register">Register</a></li>
-          <!-- Add Conditionial logic for buttons -->
+          <!-- Log in button -->
           <li><a href="/auth/login">Login</a></li>
-          <!-- Logout Button -->
-          <li><a href="/auth/logout">Logout</a></li>
           <!-- Shopping Cart -->
           <li><a href="/order"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
+          <!-- Header for logged in user -->
+          <% } if(username!==null) {  %>
+            <!-- User Account Button -->
+            <li><a href="/auth/login"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+            <!-- Logout Button -->
+            <li><a href="/auth/logout">Logout</a></li>
+            <!-- Shopping Cart -->
+            <li><a href="/order"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+          <% } %>
         </ul>
         <!-- Mobile Menu - Side Nav Bar -->
         <ul class="side-nav" id="mobile-demo">
@@ -22,7 +32,28 @@
           <li><a href="/auth/register">Register</a></li>
           <li><a href="/auth/login">Login</a></li>
           <li><a href="/auth/logout">Logout</a></li>
-          <li><a href="/order"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></li>
+          <li><a href="/order"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></li>%>
+          <!-- Add Conditionial logic for Mobile header -->
+
+                <!-- Header for logged out user -->
+                <% if(username==null) { %>
+                <!-- Register Button -->
+                <li><a href="/auth/register">Register</a></li>
+                <!-- Log in button -->
+                <li><a href="/auth/login">Login</a></li>
+                <!-- Shopping Cart -->
+                <li><a href="/order"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
+                <!-- Header for logged in user -->
+                <% } if(username!==null) {  %>
+                  <!-- User Account Button -->
+                  <li><a href="/auth/login"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+                  <!-- Logout Button -->
+                  <li><a href="/auth/logout">Logout</a></li>
+                  <!-- Shopping Cart -->
+                  <li><a href="/order"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <% } %>
+
         </ul>
       </div>
       <!-- Bottom nav bar -->

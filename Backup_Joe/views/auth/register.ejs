@@ -1,0 +1,52 @@
+<html>
+  <% include ../partials/head.ejs %>
+  <body>
+    <% include ../partials/header.ejs %>
+    <main>
+      <div class="container">
+        <h1> <%= title %> </h1>
+        <label>* All fields are required</label>
+        <br>
+        <br>
+        <form action="/auth/register" method="post" autocomplete="on">
+          <div>
+            <label>Username: (Max 12 characters)</label>
+            <input type="text" name="user_name" maxlength="12" placeholder="Username" required/>
+            <%# pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" %>
+          </div>
+          <div>
+            <label>Password: (8-12 characters)</label>
+            <input type="password" name="password" maxlength="12" placeholder="Password"
+             required/>
+             <%# pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"%>
+          </div>
+          <div>
+            <label>First Name:</label>
+            <input type="text" name="first_name" maxlength="12" placeholder="First name" required/>
+          </div>
+          <div>
+            <label>Last Name:</label>
+            <input type="text" name="last_name" maxlength="12" placeholder="Last name" required/>
+          </div>
+          <div>
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Email" required/>
+          </div>
+          <div>
+            <label>Telephone: (format: XXXXXXXXXX)</label>
+            <input type="tel" name="cell_number" placeholder="Telephone"
+            pattern="\d{10}" required/>
+          </div>
+          <div>
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required/>
+          </div>
+          <div>
+            <input type="submit" value="Register"/>
+          </div>
+        </form>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>
