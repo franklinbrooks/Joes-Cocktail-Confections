@@ -1,11 +1,13 @@
 # Joe's Cocktail Confections Website
 
 ### Screenshot:
-  ![Screenshot](https://github.com/franklinbrooks/Joes...images/screenshot.png)
+  ![Screenshot](public/images/siteHome.png)
 
-#### [Link to Live Site:](http://....com/)  
-#### [Link to Repo:](https://github.com/franklinbrooks/...)  
-#### [Link to ZenHub:](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
+#### [Link to Live Site](http://....com/)  
+#### [Link to Repo](https://github.com/franklinbrooks/Joes-Cocktail-Confections)  
+#### [Link to ZenHub](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
+
+#### [Link to Trello](https://trello.com/b/hEVqZmX5/joes-cocktail-confections)
 
 ### About The Project
 A couple paragraphs about the general approach.
@@ -38,7 +40,13 @@ Our approach for this website was to build for mobile first since majority of cu
 ### Installation instructions for dependencies
 This project includes a package.JSON file which provides details for the above dependencies and others.  These files are imported into the node_modules folder by Node Package Manager. One Ruby gem enables transpiling of Sass to CSS.  Finally, Font-Awesome and Materialize-CSS are linked via CDN.
 
-### Code Example Quote
+- Download or clone repo.
+- Run npm install in terminal.
+- Run npm start from terminal.
+
+### Code Example: Creating an Order
+When the newOrder route is requested, user's log in status is checked. Upon authentication, user's order is added to their own personal shopping cart.
+
 ```javascript
 /* Creating Order - Add to Order Button  */
 router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
@@ -55,7 +63,7 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 ````
 ### Build Strategy
 .....A couple paragraphs about the general approach you took...
-We 
+We
 
 
 ### Contributing
@@ -75,18 +83,18 @@ This project was developed as part of the Web Development Immersive program at G
 - When user places an order it sends an email to customer and business owner that the order has been placed. We implement this functionality with Nodemailer.
 
 ### Unsolved problems or major hurdles team had to overcome
-- We had to build the database in the beginning and make small additions to the database as we realized more information was needed. We learned how important that planning 
+- We had to build the database in the beginning and make small additions to the database as we realized more information was needed. We learned how important that planning
 step in building the back-end was in this project. We overcame that challenge and even added additional columns for future applications.
 - Working on way to allow user to update password so that it goes through hashing process again
 
 ### Possible Future Improvements
-In no particular order, we would like to add
+In no particular order, we would like to add:
   1. Addition of User invoicing via third-party payment API
   2. User will be able to review past order history by delivery dates.
   3. Add Status updates for orders through implementation of SMS services like Twilio, etc.
   3. Ability for Admin login
 
 ### Authors
-  [Shantel Moore](moore.shantel@gmail.com)    
+  [Shantel Moore](moore.shantel@gmail.com)   
   [Dominic Farquharson](farquharsondominic@gmail.com)    
   [Franklin Brooks](fcb@franklinchristopherbrooks.com)
