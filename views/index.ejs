@@ -113,13 +113,10 @@ have a fixed width and height (but it's not required).
   <i id="next" class="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
 
 
-
-
-
 <!-- <i class="fa fa-angle-left lg" aria-hidden="true"></i> -->
 <%# <a class="jcarousel-control-next" aria-hidden="true"></a>%>
 
-
+<%#
 <div class="feature">
 
   <a class="space" href="/products/cupcakes">
@@ -158,8 +155,65 @@ have a fixed width and height (but it's not required).
     </div>
   </a>
 
-</div>
+</div>%>
 <hr>
+<!-- Responsive Materialize cards -->
+<div class="row">
+      <div class="col s12 m12 l4">
+         <div class="card">
+           <div class="card-image">
+             <img class="grow" src="./images/cupcakes/redvelvet.jpg">
+             <span class="card-title">Delicious <br /> Cupcakes!</span>
+           </div>
+           <div class="card-content">
+             <p>Joe's famous grown-up take on the cupcake! This isn't like any
+             cupcake you've tried before.  Discover the signature treat that all your guests
+             will be talking about long after the party is over...</p>
+           </div>
+           <div class="card-action">
+             <a href="/products/cupcakes">Shop Cupcakes</a>
+           </div>
+         </div>
+       </div>
+       <div class="col s12 m12 l4">
+
+
+         <div class="card">
+           <div class="card-image">
+             <img src="./images/strawberries/strawberr.jpg">
+             <span class="card-title">Card Title</span>
+           </div>
+           <div class="card-content">
+             <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
+             (Even when it *is* one of Joe's signature candy confection-covered
+             works of art...)</p>
+           </div>
+           <div class="card-action">
+             <a href="/products/strawberries">Shop Strawberries</a>
+           </div>
+         </div>
+       </div>
+    <div class="col s12 m12 l4">
+
+         <div class="card">
+           <div class="card-image">
+             <img src="./images/cakes/cococake.jpg">
+             <span class="card-title">Card Title</span>
+           </div>
+           <div class="card-content">
+             <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
+             but the taste is straight from grandma's recipe book back home!
+             A perfect dessert offering for your most discerning guests...</p>
+           </div>
+           <div class="card-action">
+             <a href="/products/cakes">Shop Cakes</a>
+           </div>
+         </div>
+       </div>
+  </div>
+
+
+
 <% include partials/footer.ejs %>
 
 
