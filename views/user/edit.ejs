@@ -41,11 +41,11 @@
             <input  value="<%= user.dob %>" required/>
           </div>
           <div>
-            <button type="submit">Update account</button>
+            <button class="waves-effect waves-light btn-large blue" type="submit">Update account</button>
           </div>
         </form>
         <form action="<%= '/user/' + user.id + '?_method=DELETE' %>" method="POST">
-          <button onClick=alertUser() type="submit">Delete account</button>
+          <button class="waves-effect waves-light btn-large red" onClick=alertUser() type="submit">Delete account</button>
         </form>
       </div>
     </main>
