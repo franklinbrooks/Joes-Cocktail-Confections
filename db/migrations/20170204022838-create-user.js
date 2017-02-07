@@ -28,7 +28,7 @@ module.exports = {
         type: Sequelize.BIGINT
       },
       dob: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       createdAt: {
         allowNull: false,

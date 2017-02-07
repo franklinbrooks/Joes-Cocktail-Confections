@@ -2,6 +2,8 @@
 const bcrypt = require('bcryptjs');
 /* Importing database */
 const models = require('../db/models/index');
+/* Importing moment */
+const moment = require('moment');
 
 /* Function to compare password */
 function comparePass(userPassword, databasePassword) {
@@ -24,7 +26,7 @@ function createUser(req, res) {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    dob: req.body.dob,
+    dob: moment(req.body.dob).format('YYYY MM DD'),
     cellNumber: req.body.cellNumber
   });
 }
