@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 var models = require('../db/models/index');
 const authHelpers = require('../auth/auth-helpers');
-//global username variable set to null to allow for conditional rendering of header
-let username = null;
+
 
 
 
 /* GET products listing. */
 
 router.get('/cupcakes', function(req, res, next) {  // main route
+  //username variable set to null to allow for conditional rendering of header
+  let username = null;
   if (req.user) {
     username=req.user.username;
   }
@@ -25,6 +26,8 @@ router.get('/cupcakes', function(req, res, next) {  // main route
 });
 
 router.get('/cakes', function(req, res, next) {
+  //username variable set to null to allow for conditional rendering of header
+  let username = null;
   if (req.user) {
     username=req.user.username;
   }
@@ -40,6 +43,8 @@ router.get('/cakes', function(req, res, next) {
 });
 
 router.get('/strawberries', function(req, res, next) {
+  //username variable set to null to allow for conditional rendering of header
+  let username = null;
   if (req.user) {
     username=req.user.username;
   }
@@ -56,6 +61,8 @@ router.get('/strawberries', function(req, res, next) {
 
 /* item page route. Will show individual item details */
 router.get('/:id', function(req, res, next) {
+  //username variable set to null to allow for conditional rendering of header
+  let username = null;
   if (req.user) {
     username=req.user.username;
   }
