@@ -1,15 +1,59 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+    <div class="container">
+      <main>
         <h1> <%= title %> </h1>
-    <main>
-      <div class="container">
-        <div class="wrapper">
-        <h1>Welcome, <%= user.username %> </h1>
-        <a href="<%= '/user/' + user.id + '/edit' %>"><button>Edit User Profile</button></a>
+        <h2 id="float2">Welcome, <%= user.username %>!</h2>
+        <a href="<%= '/user/' + user.id + '/edit' %>"><button id="float" type="button" class="waves-light btn-large blue">Edit User Profile</button></a>
+        <hr>
+      </main>
+    </div>
+    <div class="feature">
+      <a class="space" href="/products/cupcakes">
+        <div class="showcase" >
+          <h6>Delicious</h6>
+          <h5>Cupcakes!</h5>
+          <img class="grow" src="/images/cupcakes/redvelvet.jpg" alt="A delicious cupcake"
+          height="200" width="200" >
+          <p>Joe's famous grown-up take on the cupcake! This isn't like any
+          cupcake you've tried before.  Discover the signature treat that all your guests
+          will be talking about long after the party is over...</p>
+          <button type="button" class="waves-light btn-large blue">SHOP CUPCAKES</button>
+          <br>
+          <br>
         </div>
-      </div>
-    </main>
+      </a>
+
+      <a class="space" href="/products/strawberries">
+        <div class="showcase" >
+          <h6>Confection-dipped</h6>
+          <h5>Strawberries!</h5>
+          <img class="grow" src="/images/strawberries/strawberr.jpg" alt="A delicious confection-dipped strawberry"
+          height="200" width="200" >
+          <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
+          (Even when it *is* one of Joe's signature candy confection-covered
+          works of art...)</p>
+          <button type="button" class="waves-light btn-large blue">SHOP STRAWBERRIES</button>
+          <br>
+          <br>
+        </div>
+      </a>
+      <a class="space" href="/products/cakes">
+        <div class="showcase" >
+          <h6>Southern-style</h6>
+          <h5>Cakes!</h5>
+          <img class="grow" src="/images/cakes/cococake.jpg"  alt="A delicious cake"
+          height="200" width="200" >
+          <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
+          but the taste is straight from grandma's recipe book back home!
+          A perfect dessert offering for your most discerning guests...</p>
+          <button type="button" class="waves-light btn-large blue">SHOP CAKES</button>
+          <br>
+          <br>
+        </div>
+      </a>
+    </div>
     <% include ../partials/footer.ejs %>
   </body>
 </html>

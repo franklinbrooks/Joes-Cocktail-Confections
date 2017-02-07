@@ -4,6 +4,8 @@
     <% include ../partials/header.ejs %>
     <main>
       <div class="container">
+        <div class="container">
+        <div class="container">
         <h1> <%= title %> </h1>
         <label>Edit your account</label>
         <br>
@@ -47,6 +49,8 @@
         <form action="<%= '/user/' + user.id + '?_method=DELETE' %>" method="POST">
           <button class="waves-effect waves-light btn-large red" onClick=alertUser() type="submit">Delete account</button>
         </form>
+        </div>
+        </div>
       </div>
     </main>
     <% include ../partials/footer.ejs %>

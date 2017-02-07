@@ -3,7 +3,6 @@
   <% include ../partials/head.ejs %>
 <body>
   <% include ../partials/header.ejs %>
-
     <main>
       <div class="container">
           <h1> <%= title %> </h1>
@@ -21,8 +20,10 @@
                <%# pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"%>
            </div>
           <div>
-            <input type="submit" value="Log In"/>
+            <button class="waves-light btn-large blue" type="submit">Log In</button>
           </div>
+          <br>
+          <br>
         </form>
       </div>
     </main>
