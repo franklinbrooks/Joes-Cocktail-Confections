@@ -92,16 +92,16 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
       `
         <p>Prouduct Name: ${index.productName}  </p>
         <p>Quantity: ${index.quantity} orders </p>
-        <p>Total: ${index.quantity * index.price}
+        <p>Total: $ ${(index.quantity * index.price *0.01*index.unitSize).toFixed(2)}
         <hr />
       `
   }
 
-  // setting up email
+  // setting up email - sending a copy to buyer and seller
   let mailOptions = {
-      from: '"Joe`s Cocktail Confections" <foo@blurdybloop.com>', // sender address
-      to: 'hello243@mailinator.com', // list of receivers
-      subject: `${req.user.username} has submitted an order`, // Subject line
+      from: `"Joe's Cocktail Confections" <${process.env.GMAIL_USERNAME}>`, // sender address from env variable
+      to: `${process.env.GMAIL_USERNAME}, ${req.user.email}`, // list of recipients
+      subject: `${req.user.username} has submitted an order`, // Email subject
       html:
         `<b>
           ${mail}
