@@ -3,7 +3,7 @@
 ### Screenshot:
   ![Screenshot](public/images/siteHome.png)
 
-#### [Link to Live Site](http://....com/)  
+#### [Link to Live Site](https://pacific-savannah-99868.herokuapp.com/)  
 #### [Link to Repo](https://github.com/franklinbrooks/Joes-Cocktail-Confections)  
 #### [Link to ZenHub](https://github.com/franklinbrooks/Joes-Cocktail-Confections/issues/1#boards?repos=80679483)  
 
@@ -64,7 +64,7 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 ````
 ### Build Strategy
-- 
+-
 
 
 ### Contributing
