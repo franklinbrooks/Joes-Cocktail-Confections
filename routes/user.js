@@ -6,20 +6,35 @@ var router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 // import sequelizer for POST routes
 var models = require('../db/models/index');
+//global username variable set to null to allow for conditional rendering of header
+const username = null;
 
 /* Rendering user home page - WORKS */
 router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
+  // setting username variable to null to allow for conditional rendering
+  let username = null;
+  if (req.user) {
+    username=req.user.username;
+  }
   res.render('user/index', {
     user: req.user.dataValues,
-    title: "Customer Profile"
+    title: "Customer Profile",
+    username:username
+
   });
 });
 
 /* Rendering user edit page - WORKS */
 router.get('/:id/edit', function(req, res, next) { // WORKS
+  // setting username variable to null to allow for conditional rendering
+  let username = null;
+  if (req.user) {
+    username=req.user.username;
+  }
   res.render('user/edit', {
     title: "Joe's Cocktail Confections - Edit User",
-    user: req.user.dataValues
+    user: req.user.dataValues,
+    username:username
   });
 });
 
