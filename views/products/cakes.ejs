@@ -1,23 +1,36 @@
-<% include ../partials/head.ejs %>
-  <body>
-    <% include ../partials/header.ejs %>
+
     <main>
-      <div class="container">
-        <div class="wrapper">
+
           <h1><i>Cakes</i></h1>
-          <% cakes.forEach(function(cake) {%>
-          <div>
-          <img src="<%=cake.image%>" alt=" <%= cake.productName %> image" height="200" width="200" >
-          <h4><%= cake.productName %></h4>
-          <p> Priced From $ <%= (cake.price *.01).toFixed(2) %></p>
-          <div><a class="waves-light btn-large blue"  href="/products/<%= cake.id %>">View More</a></div>
-          <br>
-          <hr>
-          </div>
-       <% }) %>
-      </div>
-      </div>
-    </main>
+           <main>
+            <br>
+           <div class="container">
+                 <div class="wrapper">
+                    <% cakes.forEach(function(cake) {%>
+                       <aside><h4><%= cake.productName.toUpperCase() %></h4></aside>
+                             <div class="row">
+                                  <div class="col s12 m7">
+                                    <div class="card card large">
+                                      <div class="card-image">
+                                        <img class="grow" src="<%=cake.image%>" alt=" <%= cake.productName %>">
+                                        <aside class="card-title categorycctitle"><%= cupcake.productName %></aside>
+                                      </div>
+                                      <div class="card-content">
+                                       <h5> Priced From $ <%= (cake.price *.01).toFixed(2) %></h5>
+                                       <p>Pictures are of past orders. Actual items can be customized.</p>
+                                      </div>
+                                      <div class="card-action">
+                                      <a href="/products/<%= cake.id %>">View More</a>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                 </div>
+                                <br>
+                           <hr>
+                    <% }) %>
+
+       </main>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
