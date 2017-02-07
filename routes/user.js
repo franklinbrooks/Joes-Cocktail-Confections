@@ -8,7 +8,6 @@ const authHelpers = require('../auth/auth-helpers');
 var models = require('../db/models/index');
 //global username variable set to null to allow for conditional rendering of header
 const username = null;
-
 /* Rendering user home page - WORKS */
 router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
   // setting username variable to null to allow for conditional rendering
@@ -20,10 +19,8 @@ router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
     user: req.user.dataValues,
     title: "Customer Profile",
     username:username
-
   });
 });
-
 /* Rendering user edit page - WORKS */
 router.get('/:id/edit', function(req, res, next) { // WORKS
   // setting username variable to null to allow for conditional rendering
@@ -37,7 +34,6 @@ router.get('/:id/edit', function(req, res, next) { // WORKS
     username:username
   });
 });
-
 /* POSTing user edits, then redirects to user home page */
 router.put('/:id', function(req, res, next) { // edit user info
   models.User.update({ // more sequelizer
@@ -53,7 +49,6 @@ router.put('/:id', function(req, res, next) { // edit user info
     res.redirect('/user/' + req.params.id);
   });
 });
-
 /* POSTing user delete, then LOGOUT and send to root index page */
 router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
   models.User.destroy({
@@ -64,5 +59,4 @@ router.delete('/:id', function(req, res, next) {  // destroy processed by method
     res.redirect('/');
   });
 });
-
 module.exports = router;

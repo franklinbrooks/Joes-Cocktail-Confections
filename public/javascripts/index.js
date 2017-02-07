@@ -1,28 +1,7 @@
-
-$(document).ready(function(){
-       $('.carousel').carousel();
-    });
-
-
-$('.carousel.carousel-slider').carousel({
-        fullWidth:true,
-      });
-
-      var rouselAutoplay = setInterval(function(){
-            $('.fa-angle-right').click();
-          }, 3000);
-
-      $('.fa-angle-right').click(function(){
-        $('.carousel.carousel-slider').carousel('next');
-        clearInterval(rouselAutoplay);
-        rouselAutoplay = setInterval(function(){
-            $('.fa-angle-right').click();
-          }, 3000);
-      });
-      $('.fa-angle-left').click(function(){
-        $('.carousel.carousel-slider').carousel('prev');
-        clearInterval(rouselAutoplay);
-        rouselAutoplay = setInterval(function(){
-            $('.fa-angle-right').click();
-          }, 3000);
-      });
+// Next button in slideshow
+let next = document.querySelector('#next');
+// Previous button in slideshow
+let previous = document.querySelector('#previous');
+// adding event Listeners
+next.addEventListener('click', ()=>$('.slider').slider('next') );
+previous.addEventListener('click', ()=>$('.slider').slider('prev') );

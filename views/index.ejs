@@ -1,59 +1,6 @@
 <!DOCTYPE html>
 <html>
 <% include partials/head.ejs %>
-<style>
-/*
-This is the visible area of you carousel.
-Set a width here to define how much items are visible.
-The width can be either fixed in px or flexible in %.
-Position must be relative!
-*/
-.jcarousel {
-    position: relative;
-    overflow: hidden;
-}
-
-/*
-This is the container of the carousel items.
-You must ensure that the position is relative or absolute and
-that the width is big enough to contain all items.
-*/
-.jcarousel ul {
-    width: 20000em;
-    position: relative;
-
-    /* Optional, required in this case since it's a <ul> element */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/*
-These are the item elements. jCarousel works best, if the items
-have a fixed width and height (but it's not required).
-*/
-.jcarousel li {
-    /* Required only for block elements like <li>'s */
-    float: left;
-}
-
-/* Font Awesome Forward and Back buttons on slideshow */
-.fa-chevron-circle-right:before {
-  position:absolute;
-  z-index:2;
-  top:40%;
-  right:0px;
-}
-
-
-.fa-chevron-circle-left:before {
-  position:absolute;
-  z-index:2;
-  top:40%;
-  left:0px;
-}
-
-</style>
 <body>
   <% include partials/header.ejs %>
 <div class="container">
@@ -195,18 +142,9 @@ have a fixed width and height (but it's not required).
 
 
 <% include partials/footer.ejs %>
-
+<!-- Script for forward and back buttons in the carousel -->
  <script type="text/javascript" src="./javascripts/index.js"></script>
 
- <script>
-  // Next button in slideshow
-  let next = document.querySelector('#next');
-  // Previous button in slideshow
-  let previous = document.querySelector('#previous');
-  // add evenet Listeners
-  next.addEventListener('click', ()=>$('.slider').slider('next') );
-  previous.addEventListener('click', ()=>$('.slider').slider('prev') );
-  </script>
 
 </body>
 </html>

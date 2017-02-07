@@ -5,10 +5,10 @@
     <div class="container">
       <div class="wrapper">
         <h1><i>Your Cart</i></h1>
-        <form action="/order/submitOrder">
+
         <!-- Function to iterate through the response object and return the user's orders -->
         <% items.forEach(function(item) {%>
-        <% console.log(item.id) %>
+        <% console.log('item id:',item.id) %>
           <div>
             <h4><%= item.productName %></h4>
             <p>Category: <%= item.category %></p>
@@ -26,12 +26,11 @@
         <% }) %>
           </div>
         </div>
-      <button class="waves-light btn-large blue" type="submit">SUBMIT ORDER</button>
-      </form>
-      <br>
-      <br>
-
-        </div>
+        <form action="/order/submitOrder">
+          <button class="waves-light btn-large blue" type="submit">SUBMIT ORDER</button>
+        </form>
+        <br>
+        <br>
       </div>
     </main>
     <script src="/javascripts/getOrders.js"></script>

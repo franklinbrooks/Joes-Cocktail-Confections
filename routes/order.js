@@ -20,7 +20,7 @@ Route is protected and requires login
 */
 router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
 
-  
+
   // setting username variable to null to allow for conditional rendering
   let username = null;
   if (req.user) {
@@ -47,7 +47,9 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 });
 
 /* POSTing item delete, then back to order index page */
-router.delete('/order', function(req, res, next) {  // destroy processed by methodOverride
+router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
+  console.log('I am hearing you');
+  console.log('to delete',req.params.id)
   models.Order.destroy({
     where: {
       id: req.params.id
@@ -88,17 +90,18 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
   for(let index of res.locals.orders) {
      mail +=
       `
-        <p>  ${index.productName}  <br />
-        <p>Quantity ${index.quantity}  </p> <br />
+        <p>Prouduct Name: ${index.productName}  </p>
+        <p>Quantity: ${index.quantity} orders </p>
+        <p>Total: $ ${(index.quantity * index.price *0.01*index.unitSize).toFixed(2)}
         <hr />
       `
   }
 
-  // setting up email
+  // setting up email - sending a copy to buyer and seller
   let mailOptions = {
-      from: '"Joe`s Cocktail Confections" <foo@blurdybloop.com>', // sender address
-      to: 'hello243@mailinator.com', // list of receivers
-      subject: `${req.user.username} has submitted an order`, // Subject line
+      from: `"Joe's Cocktail Confections" <${process.env.GMAIL_USERNAME}>`, // sender address from env variable
+      to: `${process.env.GMAIL_USERNAME}, ${req.user.email}`, // list of recipients
+      subject: `${req.user.username} has submitted an order`, // Email subject
       html:
         `<b>
           ${mail}
