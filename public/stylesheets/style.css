@@ -98,4 +98,14 @@ h1 {
 #logo {
   height: 20%; }
 
+#float {
+  display: inline-block;
+  float: right; }
+
+#float2 {
+  display: inline-block; }
+
+.shadow {
+  text-shadow: 0 0 10px DimGray; }
+
 /*# sourceMappingURL=style.css.map */

@@ -18,8 +18,9 @@ router.get('/:id', authHelpers.loginRequired, (req, res, next) => {
   }
   res.render('user/index', {
     user: req.user.dataValues,
-    title: "Joe's Cocktail Confections - Profile",
+    title: "Customer Profile",
     username:username
+
   });
 });
 
