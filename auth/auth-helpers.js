@@ -39,16 +39,8 @@ function createUser(req, res) {
     password: hash
   });
 }
-
-router.put('/:id', function(req, res, next) { // edit password version 2
-  models.User.update({
-    password: hash
-  }, { where: { id: req.params.id } })
-  .then(function() {
-    res.redirect('/user/' + req.params.id);
-  });
-});
 */
+
 
 /* Redirecting users who aren't logged in */
 function loginRequired(req, res, next) {

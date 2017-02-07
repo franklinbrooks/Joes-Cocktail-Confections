@@ -68,18 +68,28 @@ app.use(function (req, res, next) {
 */
 // Handle 404 error page both error pages need to be at bottom of app.js
 app.use(function(req, res) {
+  let username = null;
+  if (req.user) {
+    username=req.user.username;
+  }
   res.status(400);
   res.render('error', {
-    title: "Joe's Cocktail Confections - Error-404"
+    title: "Joe's Cocktail Confections - Error-404",
+    username:username
   });
 });
 
   // Handle 500 error page
 app.use(function(error, req, res, next) {
+  let username = null;
+  if (req.user) {
+    username=req.user.username;
+  }
   res.status(500);
   res.render('errortaken', {
     title: "Joe's Cocktail Confections - Error-500",
-    error: error
+    error: error,
+    username: username
   });
 });
 

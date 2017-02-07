@@ -90,8 +90,9 @@ router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
   for(let index of res.locals.orders) {
      mail +=
       `
-        <p>  ${index.productName}  <br />
-        <p>Quantity ${index.quantity}  </p> <br />
+        <p>Prouduct Name: ${index.productName}  </p>
+        <p>Quantity: ${index.quantity} orders </p>
+        <p>Total: ${index.quantity * index.price}
         <hr />
       `
   }
