@@ -1,23 +1,40 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+
     <main>
-      <div class="container">
-        <div class="wrapper">
-          <h1><i>Strawberries</i></h1>
-            <% strawberries.forEach(function(strawberry) {%>
-          <div>
-            <img src="<%=strawberry.image%>" alt=" <%= strawberry.productName %> image" height="200" width="200" >
-            <h4><%= strawberry.productName %></h4>
-            <p> Priced From $ <%= (strawberry.price *.01).toFixed(2) %></p>
-            <div><a class="waves-light btn-large blue"  href="/products/<%= strawberry.id %>">View More</a></div>
+
+           <main>
             <br>
-            <hr>
-            </div>
-          <% }) %>
-        </div>
-      </div>
-    </main>
+           <div class="container">
+             <h1><i>Strawberries</i></h1>
+
+                 <div class="wrapper">
+                    <% strawberries.forEach(function(strawberry) {%>
+                       <aside><h4><%= strawberry.productName.toUpperCase() %></h4></aside>
+                             <div class="row">
+                                  <div class="col s12 m7">
+                                    <div class="card card large">
+                                      <div class="card-image">
+                                        <img class="grow" src="<%=strawberry.image%>" alt=" <%= strawberry.productName %>">
+                                        <aside class="card-title categorycctitle"><%= strawberry.productName %></aside>
+                                      </div>
+                                      <div class="card-content">
+                                       <h5> Priced From $ <%= (strawberry.price *.01).toFixed(2) %></h5>
+                                       <p>Pictures are of past orders. Actual items can be customized.</p>
+                                      </div>
+                                      <div class="card-action">
+                                      <a href="/products/<%= strawberry.id %>">View More</a>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                 </div>
+                                <br>
+                           <hr>
+                    <% }) %>
+
+       </main>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
