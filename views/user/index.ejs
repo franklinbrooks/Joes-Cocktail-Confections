@@ -9,51 +9,60 @@
         <hr>
       </main>
     </div>
-    <div class="feature">
-      <a class="space" href="/products/cupcakes">
-        <div class="showcase" >
-          <h6>Delicious</h6>
-          <h5>Cupcakes!</h5>
-          <img class="grow" src="/images/cupcakes/redvelvet.jpg" alt="A delicious cupcake"
-          height="200" width="200" >
-          <p>Joe's famous grown-up take on the cupcake! This isn't like any
-          cupcake you've tried before.  Discover the signature treat that all your guests
-          will be talking about long after the party is over...</p>
-          <button type="button" class="waves-light btn-large blue">SHOP CUPCAKES</button>
-          <br>
-          <br>
-        </div>
-      </a>
+    <!-- Responsive Materialize cards - categories under username -->
+    <div class="row">
+          <div class="col s12 m12 l4">
+             <div class="card large">
+               <div class="card-image">
+                 <img class="grow" src="../images/cupcakes/redvelvet.jpg">
+                 <span class="card-title">Delicious <br /> Cupcakes!</span>
+               </div>
+               <div class="card-content">
+                 <p>Joe's famous grown-up take on the cupcake! This isn't like any
+                 cupcake you've tried before.  Discover the signature treat that all your guests
+                 will be talking about long after the party is over...</p>
+               </div>
+               <div class="card-action">
+                 <a class="waves-light btn-large blue" href="/products/cupcakes">Shop Cupcakes</a>
+               </div>
+             </div>
+           </div>
+           <div class="col s12 m12 l4">
 
-      <a class="space" href="/products/strawberries">
-        <div class="showcase" >
-          <h6>Confection-dipped</h6>
-          <h5>Strawberries!</h5>
-          <img class="grow" src="/images/strawberries/strawberr.jpg" alt="A delicious confection-dipped strawberry"
-          height="200" width="200" >
-          <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
-          (Even when it *is* one of Joe's signature candy confection-covered
-          works of art...)</p>
-          <button type="button" class="waves-light btn-large blue">SHOP STRAWBERRIES</button>
-          <br>
-          <br>
-        </div>
-      </a>
-      <a class="space" href="/products/cakes">
-        <div class="showcase" >
-          <h6>Southern-style</h6>
-          <h5>Cakes!</h5>
-          <img class="grow" src="/images/cakes/cococake.jpg"  alt="A delicious cake"
-          height="200" width="200" >
-          <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
-          but the taste is straight from grandma's recipe book back home!
-          A perfect dessert offering for your most discerning guests...</p>
-          <button type="button" class="waves-light btn-large blue">SHOP CAKES</button>
-          <br>
-          <br>
-        </div>
-      </a>
-    </div>
+
+             <div class="card large">
+               <div class="card-image">
+                 <img class="grow" src="../images/strawberries/strawberr.jpg">
+                 <span class="card-title">Confection-dipped <br /> Strawberries!</span>
+               </div>
+               <div class="card-content">
+                 <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
+                 (Even when it *is* one of Joe's signature candy confection-covered
+                 works of art...)</p>
+               </div>
+               <div class="card-action">
+                 <a class="waves-light btn-large blue" href="/products/strawberries">Shop Strawberries</a>
+               </div>
+             </div>
+           </div>
+        <div class="col s12 m12 l4">
+
+             <div class="card large">
+               <div class="card-image">
+                 <img class="grow" src="../images/cakes/cococake.jpg">
+                 <span class="card-title">Southern-style <br /> Cakes!</span>
+               </div>
+               <div class="card-content">
+                 <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
+                 but the taste is straight from grandma's recipe book back home!
+                 A perfect dessert offering for your most discerning guests...</p>
+               </div>
+               <div class="card-action">
+                 <a class="waves-light btn-large blue" href="/products/cakes">Shop Cakes</a>
+               </div>
+             </div>
+           </div>
+      </div>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
