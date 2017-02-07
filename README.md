@@ -20,7 +20,9 @@ Our approach for this website was to build for mobile first since majority of cu
 
 
 ### Wireframes for project:
-  ![Wireframe 1:](https://github.com/franklinbrooks/.....jpg)
+  ![Wireframe 1:](public/images/wireframe.png)
+
+
 
 ### Technologies Used
 - HTML
@@ -62,8 +64,7 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 ````
 ### Build Strategy
-.....A couple paragraphs about the general approach you took...
-We
+- 
 
 
 ### Contributing
