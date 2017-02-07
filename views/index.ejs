@@ -37,6 +37,22 @@ have a fixed width and height (but it's not required).
     float: left;
 }
 
+/* Font Awesome Forward and Back buttons on slideshow */
+.fa-chevron-circle-right:before {
+  position:absolute;
+  z-index:2;
+  top:40%;
+  right:0px;
+}
+
+
+.fa-chevron-circle-left:before {
+  position:absolute;
+  z-index:2;
+  top:40%;
+  left:0px;
+}
+
 </style>
 <body>
   <% include partials/header.ejs %>
@@ -113,54 +129,12 @@ have a fixed width and height (but it's not required).
   <i id="next" class="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
 
 
-<!-- <i class="fa fa-angle-left lg" aria-hidden="true"></i> -->
-<%# <a class="jcarousel-control-next" aria-hidden="true"></a>%>
+  <hr>
 
-<%#
-<div class="feature">
-
-  <a class="space" href="/products/cupcakes">
-    <div class="showcase" >
-      <h6>Delicious</h6>
-      <h5>Cupcakes!</h5>
-      <img class="grow" src="./images/cupcakes/redvelvet.jpg" alt="A delicious cupcake"
-      height="200" width="200" >
-      <p>Joe's famous grown-up take on the cupcake! This isn't like any
-      cupcake you've tried before.  Discover the signature treat that all your guests
-      will be talking about long after the party is over...</p>
-    </div>
-  </a>
-
-  <a class="space" href="/products/strawberries">
-    <div class="showcase" >
-      <h6>Confection-dipped</h6>
-      <h5>Strawberries!</h5>
-      <img class="grow" src="./images/strawberries/strawberr.jpg" alt="A delicious confection-dipped strawberry"
-      height="200" width="200" >
-      <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
-      (Even when it *is* one of Joe's signature candy confection-covered
-      works of art...)</p>
-    </div>
-  </a>
-
-  <a class="space" href="/products/cakes">
-    <div class="showcase" >
-      <h6>Southern-style</h6>
-      <h5>Cakes!</h5>
-      <img class="grow" src="./images/cakes/cococake.jpg"  alt="A delicious cake"
-      height="200" width="200" >
-      <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
-      but the taste is straight from grandma's recipe book back home!
-      A perfect dessert offering for your most discerning guests...</p>
-    </div>
-  </a>
-
-</div>%>
-<hr>
-<!-- Responsive Materialize cards -->
+<!-- Responsive Materialize cards - categories under carousel -->
 <div class="row">
       <div class="col s12 m12 l4">
-         <div class="card">
+         <div class="card large">
            <div class="card-image">
              <img class="grow" src="./images/cupcakes/redvelvet.jpg">
              <span class="card-title">Delicious <br /> Cupcakes!</span>
@@ -178,10 +152,10 @@ have a fixed width and height (but it's not required).
        <div class="col s12 m12 l4">
 
 
-         <div class="card">
+         <div class="card large">
            <div class="card-image">
-             <img src="./images/strawberries/strawberr.jpg">
-             <span class="card-title">Card Title</span>
+             <img class="grow" src="./images/strawberries/strawberr.jpg">
+             <span class="card-title">Confection-dipped <br /> Strawberries!</span>
            </div>
            <div class="card-content">
              <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
@@ -195,10 +169,10 @@ have a fixed width and height (but it's not required).
        </div>
     <div class="col s12 m12 l4">
 
-         <div class="card">
+         <div class="card large">
            <div class="card-image">
-             <img src="./images/cakes/cococake.jpg">
-             <span class="card-title">Card Title</span>
+             <img class="grow" src="./images/cakes/cococake.jpg">
+             <span class="card-title">Southern-style <br /> Cakes!</span>
            </div>
            <div class="card-content">
              <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
@@ -212,13 +186,7 @@ have a fixed width and height (but it's not required).
        </div>
   </div>
 
-
-
 <% include partials/footer.ejs %>
-
-
-
-
 
  <script type="text/javascript" src="./javascripts/index.js"></script>
 
