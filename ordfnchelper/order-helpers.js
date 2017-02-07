@@ -4,12 +4,12 @@ const models = require('../db/models/index');
 /* Getting orders */
 function getOrders(req, res, next) {
   models.sequelize.query(
-    'SELECT "Products"."productName", "Products"."category", "Products"."price", "Products"."unitSize", "Products"."alcohol", "Orders"."quantity", "Users"."username" FROM "Users" JOIN "Orders" ON "Users"."id" = "Orders"."userId"JOIN "Products" ON "Products"."id" = "Orders"."productId" WHERE "Users"."id" = :id',
+    'SELECT "Products"."productName", "Orders"."id", "Products"."category", "Products"."price", "Products"."unitSize", "Products"."alcohol", "Orders"."quantity", "Users"."username" FROM "Users" JOIN "Orders" ON "Users"."id" = "Orders"."userId"JOIN "Products" ON "Products"."id" = "Orders"."productId" WHERE "Users"."id" = :id',
    {   //req.user.id
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((orders) => {
-    console.log(orders);
+    console.log('rendering orders');
     res.locals.orders = orders; // setting res.locals object to access in the response
     return next(); // next function
   });

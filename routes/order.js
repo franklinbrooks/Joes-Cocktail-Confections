@@ -20,7 +20,7 @@ Route is protected and requires login
 */
 router.get('/', authHelpers.loginRequired, orderHelpers.getOrders, function(req,res,next) {
 
-  
+
   // setting username variable to null to allow for conditional rendering
   let username = null;
   if (req.user) {
@@ -47,7 +47,9 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 });
 
 /* POSTing item delete, then back to order index page */
-router.delete('/order', function(req, res, next) {  // destroy processed by methodOverride
+router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
+  console.log('I am hearing you');
+  console.log('to delete',req.params.id)
   models.Order.destroy({
     where: {
       id: req.params.id
