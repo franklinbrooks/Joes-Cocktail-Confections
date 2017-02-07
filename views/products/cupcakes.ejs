@@ -6,25 +6,32 @@
 
           <h1><i>Cupcakes</i></h1>
            <main>
+            <br>
            <div class="container">
                  <div class="wrapper">
                     <% cupcakes.forEach(function(cupcake) {%>
-
+                       <aside><h4><%= cupcake.productName.toUpperCase() %></h4></aside>
+                             <div class="row">
                                   <div class="col s12 m7">
-                                    <div class="card">
+                                    <div class="card card large">
                                       <div class="card-image">
-                                        <img src="<%=cupcake.image%>" alt=" <%= cupcake.productName %>>
-                                        <span class="card-title"><%= cupcake.productName %></span>
+                                        <img class="grow" src="<%=cupcake.image%>" alt=" <%= cupcake.productName %>">
+                                        <aside class="card-title categorycctitle"><%= cupcake.productName %></aside>
                                       </div>
                                       <div class="card-content">
-                                      <p> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></p>
+                                       <h5> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></h5>
+                                       <p>Pictures are of past orders. Actual items can be customized.</p>
                                       </div>
                                       <div class="card-action">
                                       <a href="/products/<%= cupcake.id %>">View More</a>
                                       </div>
+
                                     </div>
                                   </div>
-
+                                 </div>
+                                <br>
+                           <hr>
+                    <% }) %>
 
        </main>
     <% include ../partials/footer.ejs %>

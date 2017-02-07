@@ -59,7 +59,7 @@ router.get('/:id', function(req, res, next) {
   if (req.user) {
     username=req.user.username;
   }
-  // id should be req.params.id to allow for dynamic content. Am using 1 for testing
+  // id should be req.params.id to allow for dynamic content.
   models.Product.findById(req.params.id).then(function(product) {
     res.render('products/item',
     { productDetails: product,
