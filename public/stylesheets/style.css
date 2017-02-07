@@ -10,12 +10,12 @@ li:active {
 
 h1 span img {
   height: 25vw;
-  width: 45vw; }
+  width: 35vw; }
 
 h1 {
   font-family: 'Codystar', cursive;
   color: blue;
-  font-size: 10vw;
+  font-size: 7vw;
   animation: flash 2s infinite; }
 
 @keyframes flash {
