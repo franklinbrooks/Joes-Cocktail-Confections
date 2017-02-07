@@ -1,23 +1,32 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+
     <main>
-      <div class="container">
-        <div class="wrapper">
+
           <h1><i>Cupcakes</i></h1>
-            <% cupcakes.forEach(function(cupcake) {%>
-          <div>
-            <img src="<%=cupcake.image%>" alt=" <%= cupcake.productName %> image" height="200" width="200" >
-            <h4><%= cupcake.productName %></h4>
-            <p> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></p>
-            <div><a class="waves-light btn-large blue"  href="/products/<%= cupcake.id %>">View More</a></div>
-            <br>
-            <hr>
-            </div>
-         <% }) %>
-        </div>
-      </div>
-    </main>
+           <main>
+           <div class="container">
+                 <div class="wrapper">
+                    <% cupcakes.forEach(function(cupcake) {%>
+
+                                  <div class="col s12 m7">
+                                    <div class="card">
+                                      <div class="card-image">
+                                        <img src="<%=cupcake.image%>" alt=" <%= cupcake.productName %>>
+                                        <span class="card-title"><%= cupcake.productName %></span>
+                                      </div>
+                                      <div class="card-content">
+                                      <p> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></p>
+                                      </div>
+                                      <div class="card-action">
+                                      <a href="/products/<%= cupcake.id %>">View More</a>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+       </main>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
