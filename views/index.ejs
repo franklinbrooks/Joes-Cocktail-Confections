@@ -2,18 +2,18 @@
 <html>
 <% include partials/head.ejs %>
 <body>
-  <% include partials/header.ejs %>
-<div class="container">
-<main>
-<%# <h1> Joe's <span><img id="logo" src="./images/logo.jpg"></span>NYC</h1>%>
-</main>
-</div>
-<!-- Materialize Slider -->
-<div class="slider">
+  <%include partials/header.ejs %>
+  <div class="container">
+    <main>
+      <%# <h1> Joe's <span><img id="logo" src="./images/logo.jpg"></span>NYC</h1>%>
+    </main>
+  </div>
+  <!-- Materialize Slider -->
+  <div class="slider">
     <ul class="slides">
       <li>
         <img src="./images/cupcakes/whitefrost.jpg"> <!-- random image -->
-        <div class="caption left-align ">
+        <div class="caption left-align">
           <h3 class="shadow">Cupcakes, meet cocktails!</h3>
           <h5 class="light grey-text text-lighten-3">Exciting new treats for grown-ups</h5>
         </div>
@@ -42,7 +42,7 @@
       <li>
         <img src="./images/cupcakes/assortedcc4.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h3 class="shadow">Your palate.  Your palette.</h3>
+          <h3 class="shadow">Your palate. Your palette.</h3>
           <h5 class="light grey-text text-lighten-3">Custom confections just for you.</h5>
         </div>
       </li>
@@ -75,76 +75,58 @@
         </div>
       </li>
     </ul>
-  </div>
-
-  <!-- Back button -->
-  <i id="previous" class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
-  <!-- Forward button -->
-  <i id="next" class="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
-
-
+  </div><!-- Back button -->
+  <i aria-hidden="true" class="fa fa-chevron-circle-left fa-4x" id="previous"></i> <!-- Forward button -->
+   <i aria-hidden="true" class="fa fa-chevron-circle-right fa-4x" id="next"></i>
   <hr>
-
-<!-- Responsive Materialize cards - categories under carousel -->
-<div class="row">
-      <div class="col s12 m12 l4">
-         <div class="card large">
-           <div class="card-image">
-             <img class="grow" src="./images/cupcakes/redvelvet.jpg">
-             <span class="card-title">Delicious <br /> Cupcakes!</span>
-           </div>
-           <div class="card-content">
-             <p>Joe's famous grown-up take on the cupcake! This isn't like any
-             cupcake you've tried before.  Discover the signature treat that all your guests
-             will be talking about long after the party is over...</p>
-           </div>
-           <div class="card-action">
-             <a href="/products/cupcakes">Shop Cupcakes</a>
-           </div>
-         </div>
-       </div>
-       <div class="col s12 m12 l4">
-
-
-         <div class="card large">
-           <div class="card-image">
-             <img class="grow" src="./images/strawberries/strawberr.jpg">
-             <span class="card-title">Confection-dipped <br /> Strawberries!</span>
-           </div>
-           <div class="card-content">
-             <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit?
-             (Even when it *is* one of Joe's signature candy confection-covered
-             works of art...)</p>
-           </div>
-           <div class="card-action">
-             <a href="/products/strawberries">Shop Strawberries</a>
-           </div>
-         </div>
-       </div>
+  <!-- Responsive Materialize cards - categories under carousel -->
+  <div class="row">
     <div class="col s12 m12 l4">
-
-         <div class="card large">
-           <div class="card-image">
-             <img class="grow" src="./images/cakes/cococake.jpg">
-             <span class="card-title">Southern-style <br /> Cakes!</span>
-           </div>
-           <div class="card-content">
-             <p>Our full-size cakes look as good as anything from a fancy NYC patisserie,
-             but the taste is straight from grandma's recipe book back home!
-             A perfect dessert offering for your most discerning guests...</p>
-           </div>
-           <div class="card-action">
-             <a href="/products/cakes">Shop Cakes</a>
-           </div>
-         </div>
-       </div>
+      <div class="card large">
+        <div class="card-image">
+          <img class="grow" src="./images/cupcakes/redvelvet.jpg"> <span class="card-title">Delicious<br>
+          Cupcakes!</span>
+        </div>
+        <div class="card-content">
+          <p>Joe's famous grown-up take on the cupcake! This isn't like any cupcake you've tried before. Discover the signature treat that all your guests will be talking about long after the party is over...</p>
+        </div>
+        <div class="card-action">
+          <a href="/products/cupcakes">Shop Cupcakes</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12 l4">
+      <div class="card large">
+        <div class="card-image">
+          <img class="grow" src="./images/strawberries/strawberr.jpg"> <span class="card-title">Confection-dipped<br>
+          Strawberries!</span>
+        </div>
+        <div class="card-content">
+          <p>Elegant morsels that are a feast for the eyes as well. Who can feel guilty about a dessert made from fresh fruit? (Even when it *is* one of Joe's signature candy confection-covered works of art...)</p>
+        </div>
+        <div class="card-action">
+          <a href="/products/strawberries">Shop Strawberries</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12 l4">
+      <div class="card large">
+        <div class="card-image">
+          <img class="grow" src="./images/cakes/cococake.jpg"> <span class="card-title">Southern-style<br>
+          Cakes!</span>
+        </div>
+        <div class="card-content">
+          <p>Our full-size cakes look as good as anything from a fancy NYC patisserie, but the taste is straight from grandma's recipe book back home! A perfect dessert offering for your most discerning guests...</p>
+        </div>
+        <div class="card-action">
+          <a href="/products/cakes">Shop Cakes</a>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-<% include partials/footer.ejs %>
-<!-- Script for forward and back buttons in the carousel -->
- <script type="text/javascript" src="./javascripts/index.js"></script>
-
-
+  <%include partials/footer.ejs %>
+  <!-- Script for forward and back buttons in the carousel -->
+  <script src="./javascripts/index.js" type="text/javascript">
+  </script>
 </body>
 </html>
