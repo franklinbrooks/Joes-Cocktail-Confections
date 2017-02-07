@@ -13,7 +13,7 @@ router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   });
 });
 
-/* Registration route */
+/* Registration route - custom 500 page */
 router.post('/register', (req, res, next)  => {
   authHelpers.createUser(req, res)
   .then((user) => {
@@ -22,7 +22,7 @@ router.post('/register', (req, res, next)  => {
       res.redirect('/user/:id');
     });
   })
-  .catch((err) => { res.status(500).json({ status: 'error' }); });
+  .catch((err) => { res.status(500).render('errortaken'); });
 });
 
 /* Rendering log in page */
