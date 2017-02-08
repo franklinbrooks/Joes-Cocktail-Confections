@@ -5,7 +5,7 @@ const passport = require('../auth/local');
 //global username variable set to null to allow for conditional rendering of header
 const username = null;
 
-
+// register route - renders register page.
 router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/register', {
     title: "Joe's Cocktail Confections - Register New Customer",
@@ -13,7 +13,7 @@ router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   });
 });
 
-/* Registration route - custom 500 page */
+/* Registration route, posting when user creates an account - custom 500 page */
 router.post('/register', (req, res, next)  => {
   authHelpers.createUser(req, res)
   .then((user) => {

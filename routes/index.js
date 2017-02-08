@@ -1,4 +1,6 @@
+// importing express
 var express = require('express');
+// invoking router method
 var router = express.Router();
 
 /* GET home page. */

@@ -3,9 +3,6 @@ var router = express.Router();
 var models = require('../db/models/index');
 const authHelpers = require('../auth/auth-helpers');
 
-
-
-
 /* GET products listing. */
 
 router.get('/cupcakes', function(req, res, next) {  // main route
@@ -14,6 +11,7 @@ router.get('/cupcakes', function(req, res, next) {  // main route
   if (req.user) {
     username=req.user.username;
   }
+  // grabbing from Products table where route = cupcakes
  models.Product.findAll({
     where: { category: "Cupcakes"}
   }).then(function(cupcakes){
@@ -24,13 +22,14 @@ router.get('/cupcakes', function(req, res, next) {  // main route
     });
   });
 });
-
+// cakes category route from Products
 router.get('/cakes', function(req, res, next) {
   //username variable set to null to allow for conditional rendering of header
   let username = null;
   if (req.user) {
     username=req.user.username;
   }
+  // Grabbing from Products table where category = cakes
   models.Product.findAll({
     where: { category: "Cakes"}
   }).then(function(cakes){

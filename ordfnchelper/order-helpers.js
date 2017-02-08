@@ -1,7 +1,7 @@
 const models = require('../db/models/index');
-
-
-/* Getting orders */
+/*
+ Function to get orders. Running a query to grab Orders based on the user's id.
+*/
 function getOrders(req, res, next) {
   models.sequelize.query(
     'SELECT "Products"."productName", "Orders"."id", "Products"."category", "Products"."price", "Products"."unitSize", "Products"."alcohol", "Orders"."quantity", "Users"."username" FROM "Users" JOIN "Orders" ON "Users"."id" = "Orders"."userId"JOIN "Products" ON "Products"."id" = "Orders"."productId" WHERE "Users"."id" = :id',

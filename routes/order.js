@@ -48,8 +48,6 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 /* POSTing item delete, then back to order index page */
 router.delete('/:id', function(req, res, next) {  // destroy processed by methodOverride
-  console.log('I am hearing you');
-  console.log('to delete',req.params.id)
   models.Order.destroy({
     where: {
       id: req.params.id
@@ -61,8 +59,7 @@ router.delete('/:id', function(req, res, next) {  // destroy processed by method
 
 /* Submitting an order - using nodemailer */
 router.get('/submitOrder', orderHelpers.getOrders, (req, res, next) => {
-
-  // setting transport variable to nodemailer, invoking createTransport method, and passing gmail log in credentials as an object
+  // setting transporter variable to nodemailer, invoking createTransport method, and passing gmail log in credentials as an object
   let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {

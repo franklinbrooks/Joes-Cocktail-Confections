@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-<% include ../partials/head.ejs %>
-<body>
-  <%include ../partials/header.ejs %>
-  <main>
-    <div class="container">
-      <h1><%= title %></h1>
-      <form action="/auth/login" method="post">
-        <div>
-          <label>Username:</label> <input maxlength="12" name="username" placeholder="Username" type="text"> <%# pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" %>
-        </div>
-        <div>
-          <label>Password:</label> <input maxlength="12" name="password" placeholder="Password" type="password"> <%# pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"%>
-        </div>
-        <div>
-          <button class="waves-light btn-large blue" type="submit">Log In</button>
-        </div><br>
-        <br>
-      </form>
-    </div>
-  </main>
-  <%include ../partials/footer.ejs %>
-</body>
+  <% include ../partials/head.ejs %>
+  <body>
+    <%include ../partials/header.ejs %>
+    <main>
+      <!-- Log in Page -->
+      <div class="container">
+        <h1><%= title %></h1>
+        <form action="/auth/login" method="post">
+          <div>
+            <label>Username:</label>
+            <input maxlength="12" name="username" placeholder="Username" type="text"> <%# pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,12}$" %>
+          </div>
+          <div>
+            <label>Password:</label>
+            <input maxlength="12" name="password" placeholder="Password" type="password"> <%# pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"%>
+          </div>
+          <div>
+            <button class="waves-light btn-large blue" type="submit">Log In</button>
+          </div>
+          <br>
+          <br>
+        </form>
+      </div>
+    </main>
+    <%include ../partials/footer.ejs %>
+  </body>
 </html>

@@ -1,38 +1,35 @@
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+     <main>
+      <br>
+      <div class="container">
+       <h1><i>Cupcakes</i></h1>
 
-    <main>
+       <div class="wrapper">
+          <% cupcakes.forEach(function(cupcake) {%>
+             <aside><h4><%= cupcake.productName.toUpperCase() %></h4></aside>
+               <div class="row">
+                    <div class="col s12 m7">
+                      <div class="card card large">
+                        <div class="card-image">
+                          <img class="grow" src="<%=cupcake.image%>" alt=" <%= cupcake.productName %>">
+                          <aside class="card-title categorycctitle"><%= cupcake.productName %></aside>
+                        </div>
+                        <div class="card-content">
+                         <h5> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></h5>
+                         <p>Pictures are of past orders. Actual items can be customized.</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="/products/<%= cupcake.id %>">View More</a>
+                        </div>
 
-           <main>
-            <br>
-           <div class="container">
-             <h1><i>Cupcakes</i></h1>
-             
-                 <div class="wrapper">
-                    <% cupcakes.forEach(function(cupcake) {%>
-                       <aside><h4><%= cupcake.productName.toUpperCase() %></h4></aside>
-                             <div class="row">
-                                  <div class="col s12 m7">
-                                    <div class="card card large">
-                                      <div class="card-image">
-                                        <img class="grow" src="<%=cupcake.image%>" alt=" <%= cupcake.productName %>">
-                                        <aside class="card-title categorycctitle"><%= cupcake.productName %></aside>
-                                      </div>
-                                      <div class="card-content">
-                                       <h5> Priced From $ <%= (cupcake.price *.01).toFixed(2) %></h5>
-                                       <p>Pictures are of past orders. Actual items can be customized.</p>
-                                      </div>
-                                      <div class="card-action">
-                                      <a href="/products/<%= cupcake.id %>">View More</a>
-                                      </div>
-
-                                    </div>
-                                  </div>
-                                 </div>
-                                <br>
-                           <hr>
-                    <% }) %>
+                      </div>
+                    </div>
+                   </div>
+                      <br>
+                 <hr>
+          <% }) %>
 
        </main>
     <% include ../partials/footer.ejs %>
