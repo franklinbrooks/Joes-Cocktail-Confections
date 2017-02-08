@@ -8,6 +8,27 @@
 li:active {
   background-color: teal; }
 
+@media (min-width: 600px) {
+  .logo {
+    height: 10vw;
+    width: 15vw; } }
+
+@media (max-width: 599px) {
+  .logo {
+    height: 20vw;
+    weight: 50vw; } }
+
+.indexLogoJoe {
+  font-family: 'Codystar', cursive;
+  color: blue;
+  font-size: 6vw;
+  animation: flash 2s infinite; }
+
+.indexLogo {
+  font-family: 'Codystar', cursive;
+  color: blue;
+  animation: flash 2s infinite; }
+
 h1 span img {
   height: 25vw;
   width: 35vw; }
@@ -93,13 +114,13 @@ h1 {
 .fa-chevron-circle-right:before {
   position: absolute;
   z-index: 2;
-  top: 40%;
+  top: 70%;
   right: 0px; }
 
 .fa-chevron-circle-left:before {
   position: absolute;
   z-index: 2;
-  top: 40%;
+  top: 70%;
   left: 0px; }
 
 /*  Fonts for item page  */
