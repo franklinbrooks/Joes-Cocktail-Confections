@@ -60,6 +60,7 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 ````
 ### Build Strategy
+#### Planning Stages
  ![Planning Process 1:](public/images/Planning.jpg)
 The above pictures show the features we wanted to have on the website as well as the table structure in the planning phase.
 
