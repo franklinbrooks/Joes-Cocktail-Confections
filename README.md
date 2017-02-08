@@ -76,6 +76,7 @@ Before writing a single line of code, we front-loaded all our dependencies that 
 
 Each feature built upon the next and was given a level of importance. We tried to foresee what issues we may encounter and pseudo-code how we would tackle each problem.  Some issues arose while coding, yet and still, we successfully met the four goals we set out to accomplish through collaborative teamwork by aid of Google-Hangouts, Screenhero, and side-by-side. The conceptual idea about Middleware functions (functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle) truly aided in the completion of this app as we made custom functions.
 
+#### UXUI Collaboration
  ![UX/UI Design Assistance:](public/images/UXUI.jpg)
 
 ### Contributing
