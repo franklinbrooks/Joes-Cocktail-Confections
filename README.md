@@ -74,12 +74,15 @@ In the beginning stages, we planned out our back-end structure and laid out how 
 
 As previously stated, our approach for this website was to build for mobile first therefore, we picked design attributes that would work for web as well as mobile. We decided to use Materialize and Sass to help with this task. Of course, we can’t forget Font-Awesome since pictures say a thousand words why not have icons!
 
-Before writing a single line of code, we front-loaded all our dependencies that we felt we needed to carry out the four major features we wanted to implement in the app.  Besides having full CRUD on one of our tables, the four main features are:
--An easier way to view each product
--Enable users to add products to a shopping cart
--On order submittal have items in shopping cart append to order table
--Send email to user and business owner upon order submittal
-Each feature built upon the next and was given a level of importance.  We successfully met the four things we set out to accomplish through collaborative teamwork by aid of Screenhero and side-by-side.
+Before writing a single line of code, we front-loaded all our dependencies that we felt we needed to carry out the four major features we wanted to implement in the app.  Besides having full CRUD on one of our tables and an authentication layer, the four main features are:
+
+- An easier way to view each product
+- Enable users to add products to a shopping cart
+- On order submittal have items in shopping cart append to order table
+- Send email to user and business owner upon order submittal
+
+Each feature built upon the next and was given a level of importance. We tried to foresee what issues we may encounter and  
+We successfully met the four things we set out to accomplish through collaborative teamwork by aid of Screenhero and side-by-side.
 
 
 ### Contributing
