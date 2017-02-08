@@ -18,7 +18,7 @@ In the world of confectionary arts, there is a Harlem-born entrepreneur looking 
 
 Our approach for this website was to build for mobile first since majority of customers are reached on the go, as he markets his brand at social after-hour events. The targeted users are extroverted people who like to host social gatherings and events. These users need a quick way to view product offerings and have a visual representation of those products.  We knew a visually stunning design was key for a product such as this. The website had to present his products on its own with
 
-An online presence outside of Facebook and Instagram means your product has to present on its own
+An online presence outside of Facebook and Instagram means a product has entice users on its own without the to present on its own
 
 
 
@@ -67,13 +67,23 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 
 ````
 ### Build Strategy
-- Our approach for this website was to build for mobile first since majority of customers are reached on the go, as he markets his brand at social after-hour events. The targeted users are extroverted people who like to host social gatherings and events. These users need a quick way to view product offerings and have a visual representation of those products.  
+ ![Planning Process 1:](public/images/Planning.jpg)
+The above pictures show the features we wanted to have in website as well as the table structure in the planning phrase.
 
+In the beginning stages, we planned out our back-end structure and laid out how many tables we needed to facilitate the functionality we wanted to implement.From there, we decided on the necessary columns for each table and how each table would be related to each other. 
 
+As previously stated, our approach for this website was to build for mobile first therefore, we picked design attributes that would work for web as well as mobile. We decided to use Materialize and Sass to help with this task. Of course, we can’t forget Font-Awesome since pictures say a thousand words why not have icons!
+
+Before writing a single line of code, we front-loaded all our dependencies that we felt we needed to carry out the four major features we wanted to implement in the app.  Besides having full CRUD on one of our tables, the four main features are:
+-An easier way to view each product
+-Enable users to add products to a shopping cart
+-On order submittal have items in shopping cart append to order table
+-Send email to user and business owner upon order submittal
+Each feature built upon the next and was given a level of importance.  We successfully met the four things we set out to accomplish through collaborative teamwork by aid of Screenhero and side-by-side.
 
 
 ### Contributing
-This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, and Vince. Thanks, all!
+This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, Joe, and Vince. Thanks, all!
 
 ### Minimum Viable Product
 - Use PostgreSQL & Express to build full stack web app
