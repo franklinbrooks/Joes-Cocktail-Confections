@@ -10,17 +10,10 @@
 #### [Link to Trello](https://trello.com/b/hEVqZmX5/joes-cocktail-confections)
 
 ### About The Project
-A couple paragraphs about the general approach.
-Who are users, what do they want, and why?
 
 In the world of confectionary arts, there is a Harlem-born entrepreneur looking for a way to make it easier to organize and record his orders as well as easier for his customers to make orders. Currently, the only web presence for this business owner consists of social media sites (i.e. instagram and facebook) where his clientele places orders through calling him directly.  This is where our team stepped in to assist with this endeavor and help a local NYC business owner.  As lovers of baked goods ourselves, our team set out to share that love by building a website as an extension to his brand and to showcase his work.  What makes his business unique?  His specialties are alcohol infused baked goods and custom-made to user specification.  Our efforts were focused on giving his current customer base an easier way to view his products and make orders. As more features are added, it could possibly grow his traffic, lead volume, and increase his customer base.
 
-
-Our approach for this website was to build for mobile first since majority of customers are reached on the go, as he markets his brand at social after-hour events. The targeted users are extroverted people who like to host social gatherings and events. These users need a quick way to view product offerings and have a visual representation of those products.  We knew a visually stunning design was key for a product such as this. The website had to present his products on its own with
-
-An online presence outside of Facebook and Instagram means a product has entice users on its own without the to present on its own
-
-
+Our approach for this website was to build for mobile first since majority of customers are reached on the go, as he markets his brand at social after-hour events. The targeted users are extroverted people who like to host social gatherings and events. These users need a quick way to view product offerings and have a visual representation of those products.  An online web presence outside of Facebook and Instagram means this product has to entice users on its own without social media assistance. The potential users will eventually be people who do not know the business owner and need a way to be introduced to his great product. Therefore, we knew a visually stunning design was key for this app. 
 
 
 ### Wireframes for project:
@@ -68,22 +61,20 @@ router.post('/newOrder', authHelpers.loginRequired, (req, res, next)  => {
 ````
 ### Build Strategy
  ![Planning Process 1:](public/images/Planning.jpg)
-The above pictures show the features we wanted to have in website as well as the table structure in the planning phrase.
+The above pictures show the features we wanted to have on the website as well as the table structure in the planning phase.
 
-In the beginning stages, we planned out our back-end structure and laid out how many tables we needed to facilitate the functionality we wanted to implement.From there, we decided on the necessary columns for each table and how each table would be related to each other. 
+In the beginning stages, we planned out the back-end structure and laid out the number of tables needed to facilitate the functionality we wanted to implement. From there, we decided on the necessary columns for each table and how each table would be related. 
 
-As previously stated, our approach for this website was to build for mobile first therefore, we picked design attributes that would work for web as well as mobile. We decided to use Materialize and Sass to help with this task. Of course, we can’t forget Font-Awesome since pictures say a thousand words why not have icons!
+As previously stated, our approach for this website was to build for mobile first, therefore, we picked design attributes that would work for web as well as mobile. We decided to use Materialize and Sass to help with this task. Of course, we can’t forget Font-Awesome since pictures say a thousand words - why not have icons!
 
-Before writing a single line of code, we front-loaded all our dependencies that we felt we needed to carry out the four major features we wanted to implement in the app.  Besides having full CRUD on one of our tables and an authentication layer, the four main features are:
+Before writing a single line of code, we front-loaded all our dependencies that we felt was needed to carry out the four main features we wanted to implement in the app.  Besides having full CRUD on one of the tables and an authentication layer, the four main features were:
 
 - An easier way to view each product
 - Enable users to add products to a shopping cart
 - On order submittal have items in shopping cart append to order table
 - Send email to user and business owner upon order submittal
 
-Each feature built upon the next and was given a level of importance. We tried to foresee what issues we may encounter and  
-We successfully met the four things we set out to accomplish through collaborative teamwork by aid of Screenhero and side-by-side.
-
+Each feature built upon the next and was given a level of importance. We tried to foresee what issues we may encounter and pseudo-code how we would tackle each problem.  Some issues arose while coding, yet and still, we successfully met the four goals we set out to accomplish through collaborative teamwork by aid of Google-Hangouts, Screenhero, and side-by-side. The conceptual idea about Middleware functions (functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle) truly aided in the completion of this app as we made custom functions.
 
 ### Contributing
 This project was developed as part of the Web Development Immersive program at General Assembly in NYC, February 2017. Our mentors for this build were Kate, Ariana, Joe, and Vince. Thanks, all!
@@ -102,9 +93,8 @@ This project was developed as part of the Web Development Immersive program at G
 - When user places an order it sends an email to customer and business owner that the order has been placed. We implement this functionality with Nodemailer.
 
 ### Unsolved problems or major hurdles team had to overcome
-- We had to build the database in the beginning and make small additions to the database as we realized more information was needed. We learned how important that planning
-step in building the back-end was in this project. We overcame that challenge and even added additional columns for future applications.
-- Working on way to allow user to update password so that it goes through hashing process again
+- We had to build the database in the beginning and make small additions to the database as we realized more information was needed. We learned how important that planning step in building the back-end was in this project. We overcame that challenge and even added additional columns for future applications.
+
 
 ### Possible Future Improvements
 In no particular order, we would like to add:
@@ -113,6 +103,7 @@ In no particular order, we would like to add:
   3. Add Status updates for orders through implementation of SMS services like Twilio, etc.
   4. Ability for Admin login
   5. Add web object meta tags to header for SEO functionality
+  6. Working on way to allow user to update password so that it goes through hashing process again
   
 
 ### Authors
